@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_figma_figma__get_metadata",
+      "mcp__plugin_figma_figma__get_design_context",
+      "Bash(npm run *)",
+      "Bash(npx next *)",
+      "Bash(node_modules/.bin/next build *)",
+      "Bash(npm install *)",
+      "Bash(node_modules/.bin/next dev *)",
+      "Bash(curl -s http://localhost:3001/work/messenger)",
+      "Bash(curl -s http://localhost:3001/work/sign)",
+      "Bash(npx tsc *)",
+      "Bash(git commit *)",
+      "Bash(gh repo *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)"
+    ]
+  }
+}
