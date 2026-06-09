@@ -1,0 +1,522 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+const COVER_IMG = "/messenger.png";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+};
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
+const processSteps = [
+  {
+    icon: "🔍",
+    title: "Discovery",
+    desc: "Stakeholder interviews, audit of existing workflows, compliance requirements mapping.",
+  },
+  {
+    icon: "📊",
+    title: "Research",
+    desc: "Competitive analysis of Slack, Teams, and Signal; usability benchmarking; user interviews.",
+  },
+  {
+    icon: "🗂",
+    title: "Information Architecture",
+    desc: "Restructured the navigation model, channel taxonomy, and action hierarchy.",
+  },
+  {
+    icon: "✅",
+    title: "Validation",
+    desc: "Two rounds of usability testing with 8 participants; iterated on 3 key flows.",
+  },
+];
+
+const researchFindings = [
+  {
+    label: "Context Switching",
+    text: "Traders were switching between 4+ tools to send messages, share documents, and track approvals — leading to missed deadlines and compliance risks.",
+  },
+  {
+    label: "Compliance Gaps",
+    text: "Existing tools lacked audit trails and the ability to enforce message retention policies required by financial regulators.",
+  },
+  {
+    label: "Action Friction",
+    text: "Approvals and document requests buried in long chat threads — users couldn't quickly surface items that needed their attention.",
+  },
+];
+
+const competitorRows = [
+  { feature: "Audit trail", slack: false, teams: true, signal: false, messenger: true },
+  { feature: "Document workflows", slack: false, teams: false, signal: false, messenger: true },
+  { feature: "Compliance policies", slack: true, teams: true, signal: false, messenger: true },
+  { feature: "Ecosystem integration", slack: false, teams: false, signal: false, messenger: true },
+  { feature: "Action-driven UX", slack: false, teams: false, signal: false, messenger: true },
+];
+
+const opportunities = [
+  {
+    num: "01",
+    title: "Unified action surface",
+    text: "Merge message, document, and verification actions into a single composer — eliminating tool switching.",
+  },
+  {
+    num: "02",
+    title: "Compliance by design",
+    text: "Embed audit trail visibility and retention policy controls directly into the message UI.",
+  },
+  {
+    num: "03",
+    title: "Attention prioritisation",
+    text: "Surface actionable items — pending approvals, document requests — in a dedicated triage view.",
+  },
+];
+
+const beforeAfter = [
+  {
+    title: "Landing screen",
+    before: "Flat list of chats with no priority or action indicators.",
+    after: "Action-first layout with triage inbox, pinned chats, and status indicators.",
+  },
+  {
+    title: "Trading room",
+    before: "Generic chat interface — no market context, no linked assets.",
+    after: "Contextual sidebar with linked instruments, latest prices, and quick actions.",
+  },
+  {
+    title: "Document sharing",
+    before: "File attachments with no workflow — recipient had no clear next action.",
+    after: "Structured document cards with review/sign CTA embedded in the message.",
+  },
+];
+
+const impacts = [
+  { value: "40%", label: "Reduction in context switching" },
+  { value: "2×", label: "Faster document approval cycles" },
+  { value: "100%", label: "Regulatory audit trail coverage" },
+  { value: "8.4/10", label: "System Usability Scale score" },
+];
+
+const responsibilities = [
+  "UI/UX Lead",
+  "User Research",
+  "Interaction Design",
+  "Design System",
+  "Usability Testing",
+  "Prototyping",
+];
+
+export default function MessengerCaseStudy() {
+  return (
+    <div className="bg-bg text-white min-h-screen">
+      {/* Back nav */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center px-6 lg:px-16 py-5 bg-bg/80 backdrop-blur-md border-b border-white/[0.06]">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-[#8892a4] text-sm hover:text-white transition-colors"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M13 8H3M7 4l-4 4 4 4"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Back to Portfolio
+        </Link>
+        <span className="ml-auto text-[#8892a4] text-xs">Messenger · 2026</span>
+      </div>
+
+      {/* Hero */}
+      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden pt-16">
+        <div className="absolute inset-0">
+          <img
+            src={COVER_IMG}
+            alt="Messenger"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/60 to-bg/20" />
+        </div>
+
+        <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16 pb-24 pt-40">
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-[880px]"
+          >
+            <div className="flex items-center gap-2 mb-6">
+              <span className="text-accent text-sm font-medium">Fintech</span>
+              <span className="w-1 h-1 rounded-full bg-accent" />
+              <span className="text-accent text-sm font-medium">Enterprise</span>
+            </div>
+            <h1 className="text-6xl sm:text-7xl font-medium mb-6 leading-[1.1]">
+              Messenger
+            </h1>
+            <p className="text-[#d1d5db] text-xl leading-[1.6] max-w-[640px]">
+              Designing a secure, action-driven communication platform for
+              regulated trading — integrating messaging, document workflows, and
+              verification into one coherent experience.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="section-padding border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <SectionLabel label="Overview" />
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            className="max-w-[1068px] grid lg:grid-cols-3 gap-12 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
+          >
+            <div className="lg:col-span-2 flex flex-col gap-8">
+              <motion.div variants={stagger}>
+                <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-4">
+                  About the project
+                </motion.h2>
+                <motion.p variants={fadeUp} className="text-white/70 text-lg leading-[1.7]">
+                  Messenger is an all-in-one messaging solution that gives
+                  financial professionals enhanced control over their
+                  communication — seamlessly integrated with the company&rsquo;s
+                  fintech ecosystem including Exchange, Sign, Vault, and Drive.
+                </motion.p>
+              </motion.div>
+              <motion.div variants={stagger}>
+                <motion.h3
+                  variants={fadeUp}
+                  className="text-[#8892a4] text-sm font-medium mb-3"
+                >
+                  Design goal
+                </motion.h3>
+                <motion.p variants={fadeUp} className="text-white/80 text-base leading-[1.7]">
+                  Reduce context-switching for traders by unifying messaging,
+                  document workflows, and approval actions into a single
+                  auditable interface — while meeting the compliance
+                  requirements of regulated financial markets.
+                </motion.p>
+              </motion.div>
+            </div>
+
+            <div>
+              <motion.h3
+                variants={fadeUp}
+                className="text-[#8892a4] text-sm font-medium mb-4"
+              >
+                My role
+              </motion.h3>
+              <motion.div variants={stagger} className="flex flex-wrap gap-2">
+                {responsibilities.map((r) => (
+                  <motion.span
+                    key={r}
+                    variants={fadeUp}
+                    className="px-3 py-1.5 rounded-lg bg-card border border-white/[0.08] text-white/80 text-sm"
+                  >
+                    {r}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="section-padding bg-card border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <SectionLabel label="Process" />
+          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {processSteps.map((step) => (
+                <motion.div
+                  key={step.title}
+                  variants={fadeUp}
+                  className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
+                >
+                  <span className="text-2xl">{step.icon}</span>
+                  <div>
+                    <h3 className="text-base font-medium text-white mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-[#8892a4] text-sm leading-[1.6]">{step.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Research */}
+      <section className="section-padding border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <SectionLabel label="Research" />
+          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="flex flex-col gap-12"
+            >
+              <motion.div variants={stagger} className="flex flex-col gap-6">
+                <motion.h2 variants={fadeUp} className="text-3xl font-medium">
+                  Key findings
+                </motion.h2>
+                <div className="flex flex-col gap-4">
+                  {researchFindings.map((f) => (
+                    <motion.div
+                      key={f.label}
+                      variants={fadeUp}
+                      className="p-6 rounded-xl bg-card border border-white/[0.08]"
+                    >
+                      <h3 className="text-accent text-sm font-medium mb-2">
+                        {f.label}
+                      </h3>
+                      <p className="text-white/70 text-base leading-[1.6]">{f.text}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Competitive analysis */}
+              <motion.div variants={stagger}>
+                <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-6">
+                  Competitive analysis
+                </motion.h2>
+                <motion.div
+                  variants={fadeUp}
+                  className="rounded-xl border border-white/[0.08] overflow-hidden"
+                >
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-white/[0.08] bg-card">
+                        <th className="text-left px-5 py-4 text-[#8892a4] font-medium">
+                          Feature
+                        </th>
+                        {["Slack", "Teams", "Signal", "Messenger"].map((h) => (
+                          <th
+                            key={h}
+                            className={`text-center px-5 py-4 font-medium ${
+                              h === "Messenger" ? "text-accent" : "text-[#8892a4]"
+                            }`}
+                          >
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {competitorRows.map((row, i) => (
+                        <tr
+                          key={row.feature}
+                          className={`border-b border-white/[0.06] last:border-0 ${
+                            i % 2 === 0 ? "" : "bg-card/40"
+                          }`}
+                        >
+                          <td className="px-5 py-3.5 text-white/70">{row.feature}</td>
+                          {[row.slack, row.teams, row.signal, row.messenger].map(
+                            (val, ci) => (
+                              <td key={ci} className="text-center px-5 py-3.5">
+                                {val ? (
+                                  <span
+                                    className={`text-base ${
+                                      ci === 3 ? "text-accent" : "text-green-400/70"
+                                    }`}
+                                  >
+                                    ✓
+                                  </span>
+                                ) : (
+                                  <span className="text-white/20">✕</span>
+                                )}
+                              </td>
+                            )
+                          )}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Insights & Opportunities */}
+      <section className="section-padding bg-card border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <SectionLabel label="Insights & Opportunities" />
+          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="grid sm:grid-cols-3 gap-6"
+            >
+              {opportunities.map((o) => (
+                <motion.div
+                  key={o.num}
+                  variants={fadeUp}
+                  className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
+                >
+                  <span className="text-accent/60 text-3xl font-bold leading-none">
+                    {o.num}
+                  </span>
+                  <div>
+                    <h3 className="text-base font-medium text-white mb-2">
+                      {o.title}
+                    </h3>
+                    <p className="text-[#8892a4] text-sm leading-[1.6]">{o.text}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Validation — Before & After */}
+      <section className="section-padding border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <SectionLabel label="Validation" />
+          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="flex flex-col gap-8"
+            >
+              <motion.h2 variants={fadeUp} className="text-3xl font-medium">
+                Before &amp; After
+              </motion.h2>
+              {beforeAfter.map((item) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeUp}
+                  className="rounded-xl border border-white/[0.08] overflow-hidden"
+                >
+                  <div className="px-5 py-4 bg-card border-b border-white/[0.08]">
+                    <h3 className="text-sm font-medium text-white/60">{item.title}</h3>
+                  </div>
+                  <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
+                    <div className="p-6">
+                      <p className="text-[#8892a4] text-xs font-medium uppercase tracking-wider mb-3">
+                        Before
+                      </p>
+                      <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
+                    </div>
+                    <div className="p-6">
+                      <p className="text-accent text-xs font-medium uppercase tracking-wider mb-3">
+                        After
+                      </p>
+                      <p className="text-white text-base leading-[1.6]">{item.after}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact */}
+      <section className="section-padding bg-card border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <SectionLabel label="Impact & Outcomes" />
+          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {impacts.map((item) => (
+                <motion.div
+                  key={item.label}
+                  variants={fadeUp}
+                  className="p-6 rounded-xl bg-bg border border-white/[0.08] text-center"
+                >
+                  <div className="text-4xl font-bold text-accent mb-2">
+                    {item.value}
+                  </div>
+                  <div className="text-[#8892a4] text-sm leading-[1.4]">
+                    {item.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer nav */}
+      <section className="py-16 border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-[#8892a4] text-sm hover:text-white transition-colors"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M13 8H3M7 4l-4 4 4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Back to Portfolio
+          </Link>
+          <Link
+            href="/work/sign"
+            className="flex items-center gap-2 text-[#8892a4] text-sm hover:text-white transition-colors"
+          >
+            Next: Sign
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function SectionLabel({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-4 mb-12">
+      <span className="text-[#8892a4] text-sm font-normal whitespace-nowrap">
+        {label}
+      </span>
+      <span className="flex-1 h-px bg-white/[0.06]" />
+    </div>
+  );
+}
