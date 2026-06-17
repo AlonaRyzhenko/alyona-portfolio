@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 
-const focusPills = ["Ownership Visibility", "Workflow Clarity", "System Thinking"];
+const focusPills = ["Ownership Visibility", "Workflow Clarity", "Design Systems"];
 
 const experience = [
   "7-product fintech ecosystem — Exchange, Sign, Messenger, Vault, Drive, Verifier+, Issuer",
-  "Cybersecurity SaaS platform — UX redesign and design system from scratch",
+  "Design system from scratch — tokens, component library, engineering handoff",
+  "Cybersecurity SaaS platform — UX redesign",
   "Statistical portals redesigned across 3 visual themes",
   "CRM and API platform interfaces for enterprise clients",
 ];
@@ -46,11 +47,10 @@ export default function About() {
         >
           {/* Intro */}
           <motion.div variants={stagger} className="flex flex-col gap-4 max-w-[880px]">
-            <motion.p variants={fadeUp} className="text-[#8892a4] text-lg leading-[1.8]">
-              I design secure, scalable systems for fintech and enterprise —
-              turning fragmented workflows into clear, actionable experiences.
+            <motion.p variants={fadeUp} className="text-[#D1D5DB] text-lg leading-[1.8]">
+              I design complex B2B workflows and permission-heavy interfaces — and I own the design systems behind them.
             </motion.p>
-            <motion.p variants={fadeUp} className="text-[#8892a4] text-lg leading-[1.8]">
+            <motion.p variants={fadeUp} className="text-[#D1D5DB] text-lg leading-[1.8]">
               I focus on complex systems and enterprise workflows — designing
               solutions that bring clarity to processes where usability,
               governance, and business logic intersect.
@@ -60,7 +60,7 @@ export default function About() {
           {/* Approach */}
           <motion.div variants={stagger} className="flex flex-col gap-6">
             <motion.div variants={stagger} className="flex flex-col gap-4">
-              <motion.h2 variants={fadeUp} className="text-4xl font-medium text-white">
+              <motion.h2 variants={fadeUp} className="text-4xl font-medium text-[#D1D5DB]">
                 Approach
               </motion.h2>
               <motion.p variants={fadeUp} className="text-[#8892a4] text-lg leading-[1.7] max-w-[880px]">
@@ -104,7 +104,7 @@ export default function About() {
                 <motion.li
                   key={item}
                   variants={fadeUp}
-                  className="flex items-start gap-4 text-[#8892a4] text-base leading-[1.6]"
+                  className="flex items-start gap-4 text-[#D1D5DB] text-base leading-[1.6]"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 mt-2" />
                   <span>{item}</span>

@@ -10,14 +10,7 @@
       "Bash(node_modules/.bin/next dev *)",
       "Bash(curl -s http://localhost:3001/work/messenger)",
       "Bash(curl -s http://localhost:3001/work/sign)",
-      "Bash(npx tsc *)",
-      "Bash(git commit *)",
-      "Bash(gh repo *)",
-      "Bash(git checkout *)",
-      "Bash(git add *)",
-      "Bash(git remote *)",
-      "Bash(git branch *)",
-      "Bash(git push *)"
+      "Bash(git add *)"
     ]
   }
 }
