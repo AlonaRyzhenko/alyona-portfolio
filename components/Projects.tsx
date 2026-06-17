@@ -14,7 +14,7 @@ const projects = [
     tagline: "Secure communication platform for regulated trading.",
     description:
       "Integrated messaging, document workflows, and verification into a secure, action-driven communication platform.",
-    tags: ["secure messaging", "workflow integration", "compliance UX", "enterprise platform"],
+    tags: ["secure messaging", "workflow integration", "compliance UX", "design system", "enterprise platform"],
     href: "/work/messenger",
     img: MESSENGER_IMG,
   },
@@ -25,7 +25,7 @@ const projects = [
     tagline: "Agreement workflow platform for commodities trading.",
     description:
       "Transformed static agreements into structured, lifecycle-driven workflows with embedded governance and automation.",
-    tags: ["agreement workflows", "governance & permissions", "document systems", "enterprise UX"],
+    tags: ["agreement workflows", "governance & permissions", "document systems", "design system", "enterprise UX"],
     href: "/work/sign",
     img: SIGN_IMG,
   },
@@ -90,7 +90,7 @@ export default function Projects() {
 
                       {/* Title */}
                       <div className="flex flex-col gap-3">
-                        <h3 className="text-2xl font-medium text-white leading-tight group-hover:text-accent transition-colors duration-200">
+                        <h3 className="text-2xl font-medium text-white leading-tight">
                           {p.title}
                         </h3>
                         <p className="text-[#d1d5db] text-base leading-[1.5]">
@@ -115,7 +115,7 @@ export default function Projects() {
                     </div>
 
                     {/* CTA */}
-                    <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-lg border border-[#374151] text-white text-sm font-medium self-start group-hover:border-accent/40 group-hover:bg-accent/5 transition-all duration-200">
+                    <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-lg border border-white/20 text-white text-sm font-medium self-start hover:border-white/40 transition-all duration-200">
                       <svg
                         width="16"
                         height="16"
