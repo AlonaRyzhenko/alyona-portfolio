@@ -60,10 +60,10 @@ export default function About() {
           {/* Approach */}
           <motion.div variants={stagger} className="flex flex-col gap-6">
             <motion.div variants={stagger} className="flex flex-col gap-4">
-              <motion.h2 variants={fadeUp} className="text-4xl font-medium text-[#D1D5DB]">
+              <motion.h2 variants={fadeUp} className="text-4xl font-medium text-white">
                 Approach
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-[#8892a4] text-lg leading-[1.7] max-w-[880px]">
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-lg leading-[1.7] max-w-[880px]">
                 I design products that help users understand what is happening,
                 who is responsible, and what needs to be done next.
               </motion.p>
