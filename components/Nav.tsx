@@ -60,7 +60,7 @@ export default function Nav() {
               className={`px-5 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                 isActive(link.section)
                   ? "bg-accent text-white"
-                  : "text-white/60 hover:text-white"
+                  : "text-[#E5E7EB] hover:text-white"
               }`}
             >
               {link.label}

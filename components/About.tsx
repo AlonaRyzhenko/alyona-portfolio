@@ -33,7 +33,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-4 mb-12"
         >
-          <span className="text-[#8892a4] text-sm font-medium">About</span>
+          <span className="text-[#E5E7EB] text-sm font-normal">About</span>
           <span className="flex-1 h-px bg-white/[0.06]" />
         </motion.div>
 
