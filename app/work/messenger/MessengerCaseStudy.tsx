@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Search, BarChart3, Network, CircleCheck } from "lucide-react";
 
 const COVER_IMG = "/messenger.png";
 
@@ -17,24 +18,28 @@ const stagger = {
 
 const processSteps = [
   {
-    icon: "🔍",
+    icon: Search,
     title: "Discovery",
     desc: "Stakeholder interviews, audit of existing workflows, compliance requirements mapping.",
+    tags: ["stakeholder interviews", "workflow audit", "compliance mapping"],
   },
   {
-    icon: "📊",
+    icon: BarChart3,
     title: "Research",
     desc: "Competitive analysis of Slack, Teams, and Signal; usability benchmarking; user interviews.",
+    tags: ["competitive analysis", "usability benchmarking", "user interviews"],
   },
   {
-    icon: "🗂",
+    icon: Network,
     title: "Information Architecture",
     desc: "Restructured the navigation model, channel taxonomy, and action hierarchy.",
+    tags: ["navigation model", "channel taxonomy", "action hierarchy"],
   },
   {
-    icon: "✅",
+    icon: CircleCheck,
     title: "Validation",
-    desc: "Two rounds of usability testing with 8 participants; iterated on 3 key flows.",
+    desc: "Two rounds of usability testing with 5 participants; iterated on 3 key flows.",
+    tags: ["usability testing", "5 participants", "3 key flows"],
   },
 ];
 
@@ -258,21 +263,33 @@ export default function MessengerCaseStudy() {
               viewport={{ once: true, margin: "-80px" }}
               className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
             >
-              {processSteps.map((step) => (
-                <motion.div
-                  key={step.title}
-                  variants={fadeUp}
-                  className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
-                >
-                  <span className="text-2xl">{step.icon}</span>
-                  <div>
-                    <h3 className="text-base font-medium text-white mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-[#8892a4] text-sm leading-[1.6]">{step.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+              {processSteps.map((step) => {
+                const Icon = step.icon;
+                return (
+                  <motion.div
+                    key={step.title}
+                    variants={fadeUp}
+                    className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
+                  >
+                    <span className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-accent" strokeWidth={1.5} />
+                    </span>
+                    <div>
+                      <h3 className="text-base font-medium text-white mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-[#8892a4] text-sm leading-[1.6]">{step.desc}</p>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      {step.tags.map((tag) => (
+                        <span key={tag} className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-[#9CA3AF] text-xs">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </div>
         </div>
