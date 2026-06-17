@@ -184,45 +184,23 @@ export default function MessengerCaseStudy() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
-            className="max-w-[1068px] grid lg:grid-cols-3 gap-12 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
+            className="max-w-[1068px] flex flex-col gap-10 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
           >
-            <div className="lg:col-span-2 flex flex-col gap-8">
-              <motion.div variants={stagger}>
-                <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-4">
-                  About the project
-                </motion.h2>
-                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-lg leading-[1.7]">
-                  Messenger is a secure communication platform for regulated trading environments. It connects messaging directly to document management, verification workflows, and transaction records — so conversations stay tied to trading documentation and compliance, instead of living in a separate chat tool.
-                </motion.p>
-              </motion.div>
-              <motion.div variants={stagger}>
-                <motion.h3
-                  variants={fadeUp}
-                  className="text-[#E5E7EB] text-sm font-medium mb-3"
-                >
-                  Problem statement
-                </motion.h3>
-                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7]">
-                  Trading teams rely on messaging to coordinate deals and exchange sensitive documents — but existing tools lack compliance workflows, audit visibility, and integration with trading systems. This forces users to switch between multiple tools to complete a single workflow.
-                </motion.p>
-              </motion.div>
-              <motion.div variants={stagger}>
-                <motion.h3
-                  variants={fadeUp}
-                  className="text-[#E5E7EB] text-sm font-medium mb-3"
-                >
-                  Design goal
-                </motion.h3>
-                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7]">
-                  Redesign Messenger to support secure, compliant communication workflows — with document sharing, action discoverability, and security visibility built directly into the conversation layer.
-                </motion.p>
-              </motion.div>
-            </div>
+            {/* About the project */}
+            <motion.div variants={stagger}>
+              <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-4">
+                About the project
+              </motion.h2>
+              <motion.p variants={fadeUp} className="text-white text-base leading-[1.7]">
+                Messenger is a secure communication platform for regulated trading environments. It connects messaging directly to document management, verification workflows, and transaction records — so conversations stay tied to trading documentation and compliance, instead of living in a separate chat tool.
+              </motion.p>
+            </motion.div>
 
-            <div>
+            {/* My role */}
+            <motion.div variants={stagger}>
               <motion.h3
                 variants={fadeUp}
-                className="text-[#E5E7EB] text-sm font-medium mb-4"
+                className="text-[#9CA3AF] text-sm font-medium mb-4"
               >
                 My role
               </motion.h3>
@@ -237,7 +215,33 @@ export default function MessengerCaseStudy() {
                   </motion.span>
                 ))}
               </motion.div>
-            </div>
+            </motion.div>
+
+            {/* Problem statement — card matching research findings style */}
+            <motion.div
+              variants={fadeUp}
+              className="p-6 rounded-xl bg-card border border-white/[0.08]"
+            >
+              <h3 className="text-accent text-sm font-medium mb-2">
+                Problem statement
+              </h3>
+              <p className="text-white/70 text-base leading-[1.6]">
+                Trading teams rely on messaging to coordinate deals and exchange sensitive documents — but existing tools lack compliance workflows, audit visibility, and integration with trading systems. This forces users to switch between multiple tools to complete a single workflow.
+              </p>
+            </motion.div>
+
+            {/* Design goal */}
+            <motion.div variants={stagger}>
+              <motion.h3
+                variants={fadeUp}
+                className="text-[#9CA3AF] text-sm font-medium mb-3"
+              >
+                Design goal
+              </motion.h3>
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7]">
+                Redesign Messenger to support secure, compliant communication workflows — with document sharing, action discoverability, and security visibility built directly into the conversation layer.
+              </motion.p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
