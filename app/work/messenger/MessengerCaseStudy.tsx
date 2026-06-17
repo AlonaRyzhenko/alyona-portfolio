@@ -191,7 +191,7 @@ export default function MessengerCaseStudy() {
               <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-4">
                 About the project
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-white text-base leading-[1.7]">
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7]">
                 Messenger is a secure communication platform for regulated trading environments. It connects messaging directly to document management, verification workflows, and transaction records — so conversations stay tied to trading documentation and compliance, instead of living in a separate chat tool.
               </motion.p>
             </motion.div>
@@ -209,7 +209,7 @@ export default function MessengerCaseStudy() {
                   <motion.span
                     key={r}
                     variants={fadeUp}
-                    className="px-3 py-1.5 rounded-lg bg-card border border-white/[0.08] text-white/80 text-sm"
+                    className="px-3 py-1.5 rounded-lg bg-card border border-white/[0.08] text-white text-sm"
                   >
                     {r}
                   </motion.span>
@@ -225,7 +225,7 @@ export default function MessengerCaseStudy() {
               <h3 className="text-accent text-sm font-medium mb-2">
                 Problem statement
               </h3>
-              <p className="text-white/70 text-base leading-[1.6]">
+              <p className="text-[#D1D5DB] text-base leading-[1.6]">
                 Trading teams rely on messaging to coordinate deals and exchange sensitive documents — but existing tools lack compliance workflows, audit visibility, and integration with trading systems. This forces users to switch between multiple tools to complete a single workflow.
               </p>
             </motion.div>
