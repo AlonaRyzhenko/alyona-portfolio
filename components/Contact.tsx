@@ -32,8 +32,8 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-[#d1d5db] text-lg leading-[1.6] max-w-[700px] mb-12"
           >
-            Open to Senior Product Designer roles in B2B fintech and enterprise
-            SaaS. Feel free to reach out.
+            Open to Senior Product Designer and Design System roles in B2B
+            fintech and enterprise SaaS. Feel free to reach out.
           </motion.p>
 
           {/* Buttons */}
@@ -45,7 +45,7 @@ export default function Contact() {
             className="flex flex-wrap gap-4"
           >
             <a
-              href="https://www.linkedin.com/in/alyona-ryzhenko"
+              href="https://www.linkedin.com/in/alyona-ryzhenko-76315b188/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-2.5 rounded-lg border border-[#374151] text-white text-sm font-medium hover:border-white/30 hover:-translate-y-0.5 transition-all duration-200"
