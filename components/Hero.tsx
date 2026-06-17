@@ -6,6 +6,7 @@ const skills = [
   "Product Design",
   "Enterprise UX",
   "Workflow Clarity",
+  "Design Tokens",
   "System Thinking",
   "Fintech",
   "CRM Systems",
@@ -25,7 +26,7 @@ export default function Hero() {
 
       {/* "Portfolio" label — in normal flow, scrolls away with the page */}
       <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 lg:px-16 pt-6 flex-shrink-0">
-        <span className="text-white/50 text-sm font-medium tracking-wide">Portfolio</span>
+        <span className="text-[#E5E7EB] text-sm font-medium tracking-wide">Portfolio</span>
       </div>
 
       {/* Main content — fills remaining height between label and ticker */}
@@ -66,12 +67,12 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-[#8892a4] text-lg leading-[1.7] space-y-1"
+              className="text-[#D1D5DB] text-lg leading-[1.7] space-y-1"
             >
-              <p>I&rsquo;m Alyona, a Senior Product Designer based in Kyiv.</p>
+              <p>I&rsquo;m Alyona, Senior Product Designer in Kyiv.</p>
               <p>
-                I design secure, scalable systems for fintech and enterprise
-                products, turning fragmented workflows into clear, actionable
+                I design secure fintech and enterprise products, and the design
+                systems behind them &mdash; turning complex workflows into clear
                 experiences.
               </p>
             </motion.div>
