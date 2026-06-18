@@ -514,12 +514,12 @@ export default function MessengerCaseStudy() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6 }}
-              className="relative overflow-x-auto"
+              className="relative overflow-hidden"
             >
               <img
                 src="/messenger-ia.png"
                 alt="Messenger information architecture — site map of communication, document, and transaction modules"
-                className="min-w-[1100px] w-full h-auto block"
+                className="h-auto max-w-none block"
               />
               <div className="pointer-events-none absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-bg via-bg/80 to-transparent z-10" />
             </motion.div>
