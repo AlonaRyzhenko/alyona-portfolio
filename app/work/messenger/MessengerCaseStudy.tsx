@@ -369,15 +369,12 @@ export default function MessengerCaseStudy() {
                 </motion.h2>
                 <div className="flex flex-col gap-4">
                   {researchFindings.map((f) => (
-                    <motion.div
-                      key={f.label}
-                      variants={fadeUp}
-                      className="p-6 rounded-xl bg-card border border-white/[0.08]"
-                    >
-                      <h3 className="text-accent text-sm font-medium mb-2">
-                        {f.label}
-                      </h3>
-                      <p className="text-[#D1D5DB] text-base leading-[1.6]">{f.text}</p>
+                    <motion.div key={f.label} variants={fadeUp} className="p-6 rounded-xl bg-card border border-white/[0.08] flex items-start gap-4">
+                      <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <div>
+                        <h3 className="text-accent text-sm font-medium mb-2">{f.label}</h3>
+                        <p className="text-[#D1D5DB] text-base leading-[1.6]">{f.text}</p>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
@@ -607,12 +604,14 @@ export default function MessengerCaseStudy() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeUp} className="flex flex-col gap-3">
-                <h2 className="text-3xl font-medium text-white">Before &amp; After</h2>
-                <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
-                  Three key changes — navigation structure, trading room design, and Drive integration.
-                </p>
-              </motion.div>
+              <motion.div variants={fadeUp} className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-3xl font-medium text-white">Before &amp; After</h2>
+                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                    Three key changes — navigation structure, trading room design, and Drive integration.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
               {beforeAfter.map((item) => (
                 <motion.div
                   key={item.title}
@@ -646,8 +645,10 @@ export default function MessengerCaseStudy() {
                   </div>
                 </motion.div>
               ))}
+                </div>
+              </motion.div>
 
-              <motion.div variants={fadeUp} className="flex flex-col gap-8">
+              <motion.div variants={fadeUp} className="flex flex-col gap-12">
                 <div className="flex flex-col gap-3">
                   <h2 className="text-3xl font-medium text-white">Tasks &amp; Findings</h2>
                   <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
@@ -700,6 +701,15 @@ export default function MessengerCaseStudy() {
                       </div>
                     ))}
                   </div>
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent via-accent/30 to-transparent">
+                <div className="rounded-[11px] bg-accent/[0.04] px-6 py-5 flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <span className="text-white text-base leading-[1.6]">
+                    Sessions confirmed that all 5 critical usability gaps were resolved between session 1 and session 2 — navigation, trading room access, document sharing, file upload, and delivery confirmation. All tested users completed core tasks without guidance in the final iteration.
+                  </span>
                 </div>
               </motion.div>
             </motion.div>
