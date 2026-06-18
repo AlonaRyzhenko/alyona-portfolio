@@ -538,6 +538,23 @@ export default function MessengerCaseStudy() {
               viewport={{ once: true, margin: "-80px" }}
               className="flex flex-col gap-8"
             >
+              <motion.div variants={fadeUp} className="flex flex-col gap-5 mb-8">
+                <h2 className="text-3xl font-medium text-white">Validation Approach</h2>
+                <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                  To validate design decisions, I conducted iterative usability sessions with 5–6 internal users throughout the process. Sessions focused on core workflows — navigation, document sharing, and trading room access.
+                </p>
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-[#9CA3AF] text-sm font-medium">Methods</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {["Usability sessions", "Iterative testing", "Design review"].map((m) => (
+                      <span key={m} className="px-3 py-1.5 rounded-lg bg-bg border border-white/[0.08] text-white text-sm">
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+
               <motion.h2 variants={fadeUp} className="text-3xl font-medium">
                 Before &amp; After
               </motion.h2>
