@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Search, BarChart3, Network, CircleCheck, Lightbulb } from "lucide-react";
+import { Search, BarChart3, Network, CircleCheck, Lightbulb, Sparkles } from "lucide-react";
 
 const COVER_IMG = "/messenger.png";
 
@@ -82,6 +82,13 @@ const opportunities = [
     title: "Attention prioritisation",
     text: "Surface actionable items — pending approvals, document requests — in a dedicated triage view.",
   },
+];
+
+const insights = [
+  "Compliance workflows are separated from chat, requiring users to switch tools.",
+  "Security status is not clearly visible. Users lack confidence in document and conversation security.",
+  "Administrative control is limited. Enterprise teams need flexible permissions and monitoring tools.",
+  "Navigation structure doesn't match user mental models — core actions are buried.",
 ];
 
 const beforeAfter = [
@@ -351,10 +358,10 @@ export default function MessengerCaseStudy() {
                 <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-6">
                   Competitive analysis
                 </motion.h2>
-                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px] mb-6">
+                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px] mb-10">
                   Existing tools optimize for speed or compliance — but none combine both with integrated document workflows.
                 </motion.p>
-                <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent via-accent/30 to-transparent mb-8 max-w-[560px]">
+                <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent via-accent/30 to-transparent mb-10 max-w-[560px]">
                   <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
                     <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
                     <span className="text-white text-base">Combine secure messaging + document workflows.</span>
@@ -430,25 +437,52 @@ export default function MessengerCaseStudy() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-80px" }}
-              className="grid sm:grid-cols-3 gap-6"
+              className="flex flex-col gap-12"
             >
-              {opportunities.map((o) => (
-                <motion.div
-                  key={o.num}
-                  variants={fadeUp}
-                  className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
-                >
-                  <span className="text-accent/60 text-3xl font-bold leading-none">
-                    {o.num}
+              {/* Insights */}
+              <div className="flex flex-col gap-4">
+                <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
+                <div className="flex flex-col gap-3">
+                  {insights.map((text) => (
+                    <motion.div
+                      key={text}
+                      variants={fadeUp}
+                      className="p-5 rounded-xl bg-card border border-white/[0.08] flex items-center gap-4"
+                    >
+                      <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
+                      <p className="text-[#D1D5DB] text-base leading-[1.6]">{text}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Opportunities */}
+              <div className="flex flex-col gap-4">
+                <h3 className="text-[#9CA3AF] text-sm font-medium">Opportunities</h3>
+                <div className="flex flex-col gap-6">
+                  {opportunities.map((o) => (
+                    <motion.div key={o.num} variants={fadeUp} className="flex items-start gap-4">
+                      <span className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium flex-shrink-0">
+                        {o.num}
+                      </span>
+                      <div>
+                        <h4 className="text-white text-lg font-medium mb-1">{o.title}</h4>
+                        <p className="text-[#D1D5DB] text-base leading-[1.6]">{o.text}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Summary */}
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent via-accent/30 to-transparent">
+                <div className="rounded-[11px] bg-card px-6 py-5 flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <span className="text-white text-base leading-[1.6]">
+                    Research revealed that improving security visibility and embedding compliance workflows into messaging were the most critical opportunities to support enterprise adoption.
                   </span>
-                  <div>
-                    <h3 className="text-base font-medium text-white mb-2">
-                      {o.title}
-                    </h3>
-                    <p className="text-[#8892a4] text-sm leading-[1.6]">{o.text}</p>
-                  </div>
-                </motion.div>
-              ))}
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
