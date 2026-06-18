@@ -361,7 +361,7 @@ export default function MessengerCaseStudy() {
                 <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px] mb-10">
                   Existing tools optimize for speed or compliance — but none combine both with integrated document workflows.
                 </motion.p>
-                <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent via-accent/30 to-transparent mb-10 max-w-[560px]">
+                <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 mb-10 w-fit max-w-full">
                   <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
                     <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
                     <span className="text-white text-base">Combine secure messaging + document workflows.</span>
@@ -442,17 +442,24 @@ export default function MessengerCaseStudy() {
               {/* Insights */}
               <div className="flex flex-col gap-4">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
-                <div className="flex flex-col gap-3">
-                  {insights.map((text) => (
-                    <motion.div
-                      key={text}
-                      variants={fadeUp}
-                      className="p-5 rounded-xl bg-card border border-white/[0.08] flex items-center gap-4"
-                    >
-                      <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
-                      <p className="text-[#D1D5DB] text-base leading-[1.6]">{text}</p>
-                    </motion.div>
-                  ))}
+                <div className="flex flex-col gap-2">
+                  {insights.map((text, i) => {
+                    const isFirst = i === 0;
+                    const isLast = i === insights.length - 1;
+                    const grad = isFirst
+                      ? "bg-gradient-to-r from-accent to-white/[0.08]"
+                      : isLast
+                      ? "bg-gradient-to-l from-accent to-white/[0.08]"
+                      : "bg-white/[0.08]";
+                    return (
+                      <motion.div key={text} variants={fadeUp} className={`rounded-xl p-[1px] ${grad}`}>
+                        <div className="rounded-[11px] bg-bg px-5 py-4 flex items-center gap-4">
+                          <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
+                          <p className="text-[#D1D5DB] text-base leading-[1.6]">{text}</p>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -461,8 +468,8 @@ export default function MessengerCaseStudy() {
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Opportunities</h3>
                 <div className="flex flex-col gap-6">
                   {opportunities.map((o) => (
-                    <motion.div key={o.num} variants={fadeUp} className="flex items-start gap-4">
-                      <span className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium flex-shrink-0">
+                    <motion.div key={o.num} variants={fadeUp} className="flex items-stretch gap-4">
+                      <span className="aspect-square self-stretch rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium flex-shrink-0">
                         {o.num}
                       </span>
                       <div>
@@ -476,7 +483,7 @@ export default function MessengerCaseStudy() {
 
               {/* Summary */}
               <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent via-accent/30 to-transparent">
-                <div className="rounded-[11px] bg-card px-6 py-5 flex items-start gap-3">
+                <div className="rounded-[11px] bg-bg px-6 py-5 flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <span className="text-white text-base leading-[1.6]">
                     Research revealed that improving security visibility and embedding compliance workflows into messaging were the most critical opportunities to support enterprise adoption.
