@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Search, BarChart3, Network, CircleCheck, Lightbulb, Sparkles } from "lucide-react";
@@ -143,6 +144,7 @@ const responsibilities = [
 ];
 
 export default function MessengerCaseStudy() {
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
   return (
     <div className="bg-bg text-white min-h-screen">
       {/* Back nav */}
@@ -590,27 +592,40 @@ export default function MessengerCaseStudy() {
                 </div>
               </motion.div>
 
-              <motion.h2 variants={fadeUp} className="text-3xl font-medium">
-                Before &amp; After
-              </motion.h2>
+              <motion.div variants={fadeUp} className="flex flex-col gap-3">
+                <h2 className="text-3xl font-medium text-white">Before &amp; After</h2>
+                <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                  Three key changes — navigation structure, trading room design, and Drive integration.
+                </p>
+              </motion.div>
               {beforeAfter.map((item) => (
                 <motion.div
                   key={item.title}
                   variants={fadeUp}
                   className="rounded-xl border border-white/[0.08] overflow-hidden bg-bg"
                 >
-                  <div className="px-5 py-4">
-                    <h3 className="text-sm font-medium text-white">{item.title}</h3>
+                  <div className="px-5 py-4 border-b border-white/[0.08]">
+                    <h3 className="text-base font-medium text-white">{item.title}</h3>
                   </div>
                   <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
                     <div className="p-6 flex flex-col gap-5">
                       <p className="text-[#8892a4] text-sm font-medium uppercase tracking-wider">Before</p>
-                      <img src={item.beforeImg} alt={`${item.title} — before`} className="w-full h-auto rounded-lg border border-white/[0.06] block" />
+                      <img
+                        src={item.beforeImg}
+                        alt={`${item.title} — before`}
+                        onClick={() => setLightboxImg(item.beforeImg)}
+                        className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-opacity hover:opacity-90"
+                      />
                       <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
                     </div>
                     <div className="p-6 flex flex-col gap-5">
                       <p className="text-accent text-sm font-medium uppercase tracking-wider">After</p>
-                      <img src={item.afterImg} alt={`${item.title} — after`} className="w-full h-auto rounded-lg border border-white/[0.06] block" />
+                      <img
+                        src={item.afterImg}
+                        alt={`${item.title} — after`}
+                        onClick={() => setLightboxImg(item.afterImg)}
+                        className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-opacity hover:opacity-90"
+                      />
                       <p className="text-white text-base leading-[1.6]">{item.after}</p>
                     </div>
                   </div>
@@ -687,6 +702,19 @@ export default function MessengerCaseStudy() {
           </Link>
         </div>
       </section>
+
+      {lightboxImg && (
+        <div
+          onClick={() => setLightboxImg(null)}
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-6 cursor-zoom-out"
+        >
+          <img
+            src={lightboxImg}
+            alt="Enlarged screenshot"
+            className="max-w-[95vw] max-h-[90vh] w-auto h-auto rounded-lg shadow-2xl"
+          />
+        </div>
+      )}
     </div>
   );
 }
