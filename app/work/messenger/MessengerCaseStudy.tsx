@@ -442,7 +442,7 @@ export default function MessengerCaseStudy() {
               {/* Insights */}
               <div className="flex flex-col gap-4 max-w-[880px]">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4">
                   {insights.map((text, i) => {
                     const isFirst = i === 0;
                     const isLast = i === insights.length - 1;
