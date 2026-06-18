@@ -519,7 +519,7 @@ export default function MessengerCaseStudy() {
               <img
                 src="/messenger-ia.png"
                 alt="Messenger information architecture — site map of communication, document, and transaction modules"
-                className="h-[560px] w-auto max-w-none block"
+                className="h-[600px] w-auto max-w-none block"
               />
               <div className="pointer-events-none absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-bg via-bg/80 to-transparent z-10" />
             </motion.div>
