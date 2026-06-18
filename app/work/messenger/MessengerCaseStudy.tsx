@@ -522,7 +522,7 @@ export default function MessengerCaseStudy() {
               alt="Messenger information architecture — site map of communication, document, and transaction modules"
               className="h-[600px] w-auto max-w-none block"
             />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-bg via-bg/80 to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-bg via-bg to-transparent z-10" />
           </motion.div>
         </div>
       </section>
