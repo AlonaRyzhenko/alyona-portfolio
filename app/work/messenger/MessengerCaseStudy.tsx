@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Search, BarChart3, Network, CircleCheck, Lightbulb, Sparkles, ArrowRight } from "lucide-react";
+import { Search, BarChart3, Network, CircleCheck, Lightbulb, Sparkles, ArrowRight, Zap, TrendingUp, ArrowDown, ArrowUp, Minus } from "lucide-react";
 
 const COVER_IMG = "/messenger.png";
 
@@ -139,10 +139,34 @@ const keyFindings = [
 ];
 
 const impacts = [
-  { value: "40%", label: "Reduction in context switching" },
-  { value: "2×", label: "Faster document approval cycles" },
-  { value: "100%", label: "Regulatory audit trail coverage" },
-  { value: "8.4/10", label: "System Usability Scale score" },
+  {
+    icon: Zap,
+    title: "Workflow Efficiency",
+    text: "Integrated document and transaction actions directly into conversations — users no longer need to switch between Messenger, Drive, and Sign to complete a single workflow.",
+    badge: "context switching",
+    trend: "down",
+  },
+  {
+    icon: Sparkles,
+    title: "User Experience",
+    text: "Restructured navigation and explicit error states resolved the most critical usability gaps — key actions are now findable without guidance, confirmed in usability sessions.",
+    badge: "task clarity",
+    trend: "up",
+  },
+  {
+    icon: TrendingUp,
+    title: "Product Value",
+    text: "Permission-based trading rooms and embedded document workflows created a compliance-ready communication layer aligned with enterprise security and audit requirements.",
+    badge: "enterprise readiness",
+    trend: "up",
+  },
+  {
+    icon: Lightbulb,
+    title: "Key Learning",
+    text: "Designing for regulated environments means every UX decision has a security consequence — requiring continuous alignment with product, compliance, and engineering throughout delivery.",
+    badge: "cross-team alignment",
+    trend: "equal",
+  },
 ];
 
 const responsibilities = [
