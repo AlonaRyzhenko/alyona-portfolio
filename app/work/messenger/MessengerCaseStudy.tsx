@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Search, BarChart3, Network, CircleCheck } from "lucide-react";
+import { Search, BarChart3, Network, CircleCheck, Lightbulb } from "lucide-react";
 
 const COVER_IMG = "/messenger.png";
 
@@ -278,7 +278,7 @@ export default function MessengerCaseStudy() {
                       <h3 className="text-base font-medium text-white mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-[#8892a4] text-sm leading-[1.6]">{step.desc}</p>
+                      <p className="text-[#D1D5DB] text-sm leading-[1.6]">{step.desc}</p>
                     </div>
                     <div className="flex flex-wrap gap-2 mt-1">
                       {step.tags.map((tag) => (
@@ -307,6 +307,25 @@ export default function MessengerCaseStudy() {
               viewport={{ once: true, margin: "-80px" }}
               className="flex flex-col gap-12"
             >
+              <motion.div variants={stagger} className="flex flex-col gap-5">
+                <motion.h2 variants={fadeUp} className="text-3xl font-medium text-white">
+                  Research Approach
+                </motion.h2>
+                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                  To understand where Messenger was failing users in regulated trading environments, I audited the existing product, reviewed compliance requirements, and benchmarked competitor tools.
+                </motion.p>
+                <motion.div variants={fadeUp} className="flex flex-col gap-3">
+                  <h3 className="text-[#9CA3AF] text-sm font-medium">Methods</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {["Compliance review", "Competitor analysis", "Workflow audit"].map((m) => (
+                      <span key={m} className="px-3 py-1.5 rounded-lg bg-card border border-white/[0.08] text-white text-sm">
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              </motion.div>
+
               <motion.div variants={stagger} className="flex flex-col gap-6">
                 <motion.h2 variants={fadeUp} className="text-3xl font-medium">
                   Key findings
@@ -321,7 +340,7 @@ export default function MessengerCaseStudy() {
                       <h3 className="text-accent text-sm font-medium mb-2">
                         {f.label}
                       </h3>
-                      <p className="text-white/70 text-base leading-[1.6]">{f.text}</p>
+                      <p className="text-[#D1D5DB] text-base leading-[1.6]">{f.text}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -332,6 +351,16 @@ export default function MessengerCaseStudy() {
                 <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-6">
                   Competitive analysis
                 </motion.h2>
+                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px] mb-6">
+                  Existing tools optimize for speed or compliance — but none combine both with integrated document workflows.
+                </motion.p>
+                <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent via-accent/30 to-transparent mb-8 max-w-[560px]">
+                  <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
+                    <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
+                    <span className="text-white text-base">Combine secure messaging + document workflows.</span>
+                  </div>
+                </motion.div>
+                <h3 className="text-[#9CA3AF] text-sm font-medium mb-4">Competitor Comparison</h3>
                 <motion.div
                   variants={fadeUp}
                   className="rounded-xl border border-white/[0.08] overflow-hidden"
@@ -362,7 +391,7 @@ export default function MessengerCaseStudy() {
                             i % 2 === 0 ? "" : "bg-card/40"
                           }`}
                         >
-                          <td className="px-5 py-3.5 text-white/70">{row.feature}</td>
+                          <td className="px-5 py-3.5 text-[#D1D5DB]">{row.feature}</td>
                           {[row.slack, row.teams, row.signal, row.messenger].map(
                             (val, ci) => (
                               <td key={ci} className="text-center px-5 py-3.5">
