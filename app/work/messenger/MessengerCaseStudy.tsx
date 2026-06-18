@@ -533,7 +533,7 @@ export default function MessengerCaseStudy() {
             <img
               src="/messenger-ia.png"
               alt="Messenger information architecture — site map of communication, document, and transaction modules"
-              className="w-full h-auto block rounded-xl max-w-[820px]"
+              className="w-full h-auto block rounded-xl max-w-[920px]"
             />
           </motion.div>
         </div>
@@ -599,16 +599,16 @@ export default function MessengerCaseStudy() {
                   variants={fadeUp}
                   className="rounded-xl border border-white/[0.08] overflow-hidden bg-bg"
                 >
-                  <div className="px-5 py-4 bg-card border-b border-white/[0.08]">
+                  <div className="px-5 py-4">
                     <h3 className="text-sm font-medium text-white">{item.title}</h3>
                   </div>
                   <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
-                    <div className="p-6 flex flex-col gap-4">
+                    <div className="p-6 flex flex-col gap-5">
                       <p className="text-[#8892a4] text-sm font-medium uppercase tracking-wider">Before</p>
                       <img src={item.beforeImg} alt={`${item.title} — before`} className="w-full h-auto rounded-lg border border-white/[0.06] block" />
                       <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
                     </div>
-                    <div className="p-6 flex flex-col gap-4">
+                    <div className="p-6 flex flex-col gap-5">
                       <p className="text-accent text-sm font-medium uppercase tracking-wider">After</p>
                       <img src={item.afterImg} alt={`${item.title} — after`} className="w-full h-auto rounded-lg border border-white/[0.06] block" />
                       <p className="text-white text-base leading-[1.6]">{item.after}</p>
