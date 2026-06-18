@@ -93,10 +93,10 @@ const insights = [
 ];
 
 const iterationSteps = [
-  { num: "1", title: "Design proposal", desc: "Based on research insights and user mental models" },
-  { num: "2", title: "Usability session", desc: "Tested with 5–6 internal users, observed task completion" },
-  { num: "3", title: "Design revision", desc: "Iterated on navigation, error states, and integrations" },
-  { num: "4", title: "Engineering handoff", desc: "Final designs approved with product and engineering" },
+  { num: "01", title: "Design proposal", desc: "Based on research insights and user mental models" },
+  { num: "02", title: "Usability session", desc: "Tested with 5–6 internal users, observed task completion" },
+  { num: "03", title: "Design revision", desc: "Iterated on navigation, error states, and integrations" },
+  { num: "04", title: "Engineering handoff", desc: "Final designs approved with product and engineering" },
 ];
 
 const beforeAfter = [
@@ -592,7 +592,7 @@ export default function MessengerCaseStudy() {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {iterationSteps.map((step) => (
                     <div key={step.num} className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4">
-                      <span className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium">
+                      <span className="w-11 h-11 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-medium">
                         {step.num}
                       </span>
                       <div>
@@ -649,14 +649,15 @@ export default function MessengerCaseStudy() {
               </motion.div>
 
               <motion.div variants={fadeUp} className="flex flex-col gap-12">
-                <div className="flex flex-col gap-3">
-                  <h2 className="text-3xl font-medium text-white">Tasks &amp; Findings</h2>
-                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
-                    5 tasks tested across 2 sessions with 5–6 internal users.
-                  </p>
-                </div>
+                <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-3">
+                    <h2 className="text-3xl font-medium text-white">Tasks &amp; Findings</h2>
+                    <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                      5 tasks tested across 2 sessions with 5–6 internal users.
+                    </p>
+                  </div>
 
-                <div className="rounded-xl border border-white/[0.08] overflow-hidden">
+                  <div className="rounded-xl border border-white/[0.08] overflow-hidden">
                   <table className="w-full text-left">
                     <thead>
                       <tr className="border-b border-white/[0.08] bg-bg">
@@ -686,6 +687,7 @@ export default function MessengerCaseStudy() {
                       ))}
                     </tbody>
                   </table>
+                  </div>
                 </div>
 
                 <div className="flex flex-col gap-4">
@@ -704,8 +706,8 @@ export default function MessengerCaseStudy() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent via-accent/30 to-transparent">
-                <div className="rounded-[11px] bg-accent/[0.04] px-6 py-5 flex items-start gap-3">
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent/60 to-transparent">
+                <div className="rounded-[11px] bg-[#111827]/95 px-6 py-5 flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <span className="text-white text-base leading-[1.6]">
                     Sessions confirmed that all 5 critical usability gaps were resolved between session 1 and session 2 — navigation, trading room access, document sharing, file upload, and delivery confirmation. All tested users completed core tasks without guidance in the final iteration.
@@ -715,6 +717,19 @@ export default function MessengerCaseStudy() {
             </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* Showcase */}
+      <section className="border-t border-white/[0.06]">
+        <motion.img
+          src="/messenger-showcase.png"
+          alt="Messenger product showcase"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8 }}
+          className="w-full h-auto block"
+        />
       </section>
 
       {/* Impact */}
