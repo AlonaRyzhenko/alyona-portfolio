@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Search, BarChart3, Network, CircleCheck, Lightbulb, Sparkles } from "lucide-react";
+import { Search, BarChart3, Network, CircleCheck, Lightbulb, Sparkles, ArrowRight } from "lucide-react";
 
 const COVER_IMG = "/messenger.png";
 
@@ -121,6 +121,21 @@ const beforeAfter = [
     before: "File attachments with no workflow — recipient had no clear next action.",
     after: "Structured document cards with review/sign CTA embedded in the message.",
   },
+];
+
+const tasks = [
+  { task: "Find a contact and send a message", s1: "failed", s2: "passed" },
+  { task: "Create a trading room with members", s1: "partial", s2: "passed" },
+  { task: "Share a document from Drive within chat", s1: "failed", s2: "passed" },
+  { task: "Upload a file to a conversation", s1: "failed", s2: "passed" },
+  { task: "Check if a message was delivered", s1: "failed", s2: "passed" },
+];
+
+const keyFindings = [
+  { title: "Navigation confusion.", text: "IA restructured — Channels and Contacts surfaced at the first navigation level." },
+  { title: "Trading room discoverability.", text: "Room creation surfaced as a primary action with clear naming and member roles." },
+  { title: "Drive integration missing.", text: "Drive panel integrated directly into conversation — search, select, and attach inline." },
+  { title: "Delivery confirmation.", text: "Read receipts and delivery indicators added to all messages." },
 ];
 
 const impacts = [
@@ -631,6 +646,62 @@ export default function MessengerCaseStudy() {
                   </div>
                 </motion.div>
               ))}
+
+              <motion.div variants={fadeUp} className="flex flex-col gap-8">
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-3xl font-medium text-white">Tasks &amp; Findings</h2>
+                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                    5 tasks tested across 2 sessions with 5–6 internal users.
+                  </p>
+                </div>
+
+                <div className="rounded-xl border border-white/[0.08] overflow-hidden">
+                  <table className="w-full text-left">
+                    <thead>
+                      <tr className="border-b border-white/[0.08] bg-bg">
+                        <th className="px-5 py-4 text-[#8892a4] font-medium">Task</th>
+                        <th className="px-5 py-4 text-[#8892a4] font-medium text-center">Session 1</th>
+                        <th className="px-5 py-4 text-[#8892a4] font-medium text-center">Session 2</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tasks.map((row, i) => (
+                        <tr key={row.task} className={`border-b border-white/[0.06] last:border-0 ${i % 2 === 0 ? "" : "bg-bg/40"}`}>
+                          <td className="px-5 py-4 text-[#D1D5DB]">{row.task}</td>
+                          {[row.s1, row.s2].map((status, ci) => (
+                            <td key={ci} className="px-5 py-4 text-center">
+                              <span className={`inline-block px-2.5 py-1 rounded text-xs font-medium uppercase tracking-wider ${
+                                status === "passed"
+                                  ? "bg-accent/15 text-accent"
+                                  : status === "partial"
+                                  ? "bg-yellow-500/15 text-yellow-400"
+                                  : "bg-red-500/15 text-red-400"
+                              }`}>
+                                {status}
+                              </span>
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <h3 className="text-[#9CA3AF] text-sm font-medium">Key Findings &amp; Resolutions</h3>
+                  <div className="flex flex-col gap-3">
+                    {keyFindings.map((f) => (
+                      <div key={f.title} className="p-5 rounded-xl bg-bg border border-white/[0.08] flex items-start gap-4">
+                        <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                        <div>
+                          <p className="text-accent text-sm font-medium mb-1">{f.title}</p>
+                          <p className="text-[#D1D5DB] text-base leading-[1.6]">{f.text}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
