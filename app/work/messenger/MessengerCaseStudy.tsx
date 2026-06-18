@@ -499,7 +499,7 @@ export default function MessengerCaseStudy() {
       <section className="section-padding bg-bg border-t border-white/[0.06]">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
           <SectionLabel label="Information Architecture" />
-          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))] flex flex-col gap-8">
+          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -509,21 +509,21 @@ export default function MessengerCaseStudy() {
             >
               To support complex trading workflows, I structured Messenger into clear communication, document, and transaction modules.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6 }}
-              className="relative overflow-hidden"
-            >
-              <img
-                src="/messenger-ia.png"
-                alt="Messenger information architecture — site map of communication, document, and transaction modules"
-                className="h-[600px] w-auto max-w-none block"
-              />
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-bg via-bg/80 to-transparent z-10" />
-            </motion.div>
           </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden mt-8"
+          >
+            <img
+              src="/messenger-ia.png"
+              alt="Messenger information architecture — site map of communication, document, and transaction modules"
+              className="h-[600px] w-auto max-w-none block"
+            />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-bg via-bg/80 to-transparent z-10" />
+          </motion.div>
         </div>
       </section>
 
