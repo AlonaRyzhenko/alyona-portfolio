@@ -482,8 +482,8 @@ export default function MessengerCaseStudy() {
               </div>
 
               {/* Summary */}
-              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent via-accent/30 to-transparent">
-                <div className="rounded-[11px] bg-accent/[0.04] px-6 py-5 flex items-start gap-3">
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent/60 to-transparent">
+                <div className="rounded-[11px] bg-[#111827]/95 px-6 py-5 flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <span className="text-white text-base leading-[1.6]">
                     Research revealed that improving security visibility and embedding compliance workflows into messaging were the most critical opportunities to support enterprise adoption.
