@@ -533,7 +533,7 @@ export default function MessengerCaseStudy() {
             <img
               src="/messenger-ia.png"
               alt="Messenger information architecture — site map of communication, document, and transaction modules"
-              className="w-full h-auto block rounded-xl"
+              className="w-full h-auto block rounded-xl max-w-[820px]"
             />
           </motion.div>
         </div>
@@ -549,9 +549,9 @@ export default function MessengerCaseStudy() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-80px" }}
-              className="flex flex-col gap-8"
+              className="flex flex-col gap-16"
             >
-              <motion.div variants={fadeUp} className="flex flex-col gap-5 mb-8">
+              <motion.div variants={fadeUp} className="flex flex-col gap-5">
                 <h2 className="text-3xl font-medium text-white">Validation Approach</h2>
                 <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
                   To validate design decisions, I conducted iterative usability sessions with 5–6 internal users throughout the process. Sessions focused on core workflows — navigation, document sharing, and trading room access.
@@ -599,23 +599,19 @@ export default function MessengerCaseStudy() {
                   variants={fadeUp}
                   className="rounded-xl border border-white/[0.08] overflow-hidden bg-bg"
                 >
-                  <div className="px-5 py-4 bg-[#1a1f2e] border-b border-white/[0.08]">
-                    <h3 className="text-sm font-medium text-[#D1D5DB]">{item.title}</h3>
+                  <div className="px-5 py-4 bg-card border-b border-white/[0.08]">
+                    <h3 className="text-sm font-medium text-white">{item.title}</h3>
                   </div>
                   <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
                     <div className="p-6 flex flex-col gap-4">
+                      <p className="text-[#8892a4] text-sm font-medium uppercase tracking-wider">Before</p>
                       <img src={item.beforeImg} alt={`${item.title} — before`} className="w-full h-auto rounded-lg border border-white/[0.06] block" />
-                      <div>
-                        <p className="text-[#8892a4] text-xs font-medium uppercase tracking-wider mb-2">Before</p>
-                        <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
-                      </div>
+                      <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
                     </div>
                     <div className="p-6 flex flex-col gap-4">
+                      <p className="text-accent text-sm font-medium uppercase tracking-wider">After</p>
                       <img src={item.afterImg} alt={`${item.title} — after`} className="w-full h-auto rounded-lg border border-white/[0.06] block" />
-                      <div>
-                        <p className="text-accent text-xs font-medium uppercase tracking-wider mb-2">After</p>
-                        <p className="text-white text-base leading-[1.6]">{item.after}</p>
-                      </div>
+                      <p className="text-white text-base leading-[1.6]">{item.after}</p>
                     </div>
                   </div>
                 </motion.div>
