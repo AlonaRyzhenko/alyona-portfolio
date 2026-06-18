@@ -91,6 +91,13 @@ const insights = [
   "Navigation structure doesn't match user mental models — core actions are buried.",
 ];
 
+const iterationSteps = [
+  { num: "1", title: "Design proposal", desc: "Based on research insights and user mental models" },
+  { num: "2", title: "Usability session", desc: "Tested with 5–6 internal users, observed task completion" },
+  { num: "3", title: "Design revision", desc: "Iterated on navigation, error states, and integrations" },
+  { num: "4", title: "Engineering handoff", desc: "Final designs approved with product and engineering" },
+];
+
 const beforeAfter = [
   {
     title: "Landing screen",
@@ -552,6 +559,28 @@ export default function MessengerCaseStudy() {
                       </span>
                     ))}
                   </div>
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-3xl font-medium text-white">Iteration Process</h2>
+                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                    Each design proposal was tested, revised, and retested before engineering handoff.
+                  </p>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {iterationSteps.map((step) => (
+                    <div key={step.num} className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4">
+                      <span className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium">
+                        {step.num}
+                      </span>
+                      <div>
+                        <h3 className="text-white text-lg font-medium mb-1">{step.title}</h3>
+                        <p className="text-[#D1D5DB] text-sm leading-[1.6]">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </motion.div>
 
