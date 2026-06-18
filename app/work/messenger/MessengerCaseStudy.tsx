@@ -101,16 +101,22 @@ const iterationSteps = [
 const beforeAfter = [
   {
     title: "Landing screen",
+    beforeImg: "/landing-before.png",
+    afterImg: "/landing-after.png",
     before: "Flat list of chats with no priority or action indicators.",
     after: "Action-first layout with triage inbox, pinned chats, and status indicators.",
   },
   {
     title: "Trading room",
+    beforeImg: "/trading-before.png",
+    afterImg: "/trading-after.png",
     before: "Generic chat interface — no market context, no linked assets.",
     after: "Contextual sidebar with linked instruments, latest prices, and quick actions.",
   },
   {
     title: "Document sharing",
+    beforeImg: "/docsharing-before.png",
+    afterImg: "/docsharing-after.png",
     before: "File attachments with no workflow — recipient had no clear next action.",
     after: "Structured document cards with review/sign CTA embedded in the message.",
   },
@@ -554,7 +560,7 @@ export default function MessengerCaseStudy() {
                   <h3 className="text-[#9CA3AF] text-sm font-medium">Methods</h3>
                   <div className="flex flex-wrap gap-2">
                     {["Usability sessions", "Iterative testing", "Design review"].map((m) => (
-                      <span key={m} className="px-3 py-1.5 rounded-lg bg-bg border border-white/[0.08] text-white text-sm">
+                      <span key={m} className="px-3 py-1.5 rounded-lg bg-[#1a1f2e] border border-white/[0.08] text-white text-sm">
                         {m}
                       </span>
                     ))}
@@ -591,23 +597,25 @@ export default function MessengerCaseStudy() {
                 <motion.div
                   key={item.title}
                   variants={fadeUp}
-                  className="rounded-xl bg-bg border border-white/[0.08] overflow-hidden"
+                  className="rounded-xl border border-white/[0.08] overflow-hidden bg-bg"
                 >
-                  <div className="px-5 py-4 bg-bg border-b border-white/[0.08]">
-                    <h3 className="text-sm font-medium text-white/60">{item.title}</h3>
+                  <div className="px-5 py-4 bg-[#1a1f2e] border-b border-white/[0.08]">
+                    <h3 className="text-sm font-medium text-[#D1D5DB]">{item.title}</h3>
                   </div>
                   <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
-                    <div className="p-6">
-                      <p className="text-[#8892a4] text-xs font-medium uppercase tracking-wider mb-3">
-                        Before
-                      </p>
-                      <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
+                    <div className="p-6 flex flex-col gap-4">
+                      <img src={item.beforeImg} alt={`${item.title} — before`} className="w-full h-auto rounded-lg border border-white/[0.06] block" />
+                      <div>
+                        <p className="text-[#8892a4] text-xs font-medium uppercase tracking-wider mb-2">Before</p>
+                        <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
+                      </div>
                     </div>
-                    <div className="p-6">
-                      <p className="text-accent text-xs font-medium uppercase tracking-wider mb-3">
-                        After
-                      </p>
-                      <p className="text-white text-base leading-[1.6]">{item.after}</p>
+                    <div className="p-6 flex flex-col gap-4">
+                      <img src={item.afterImg} alt={`${item.title} — after`} className="w-full h-auto rounded-lg border border-white/[0.06] block" />
+                      <div>
+                        <p className="text-accent text-xs font-medium uppercase tracking-wider mb-2">After</p>
+                        <p className="text-white text-base leading-[1.6]">{item.after}</p>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
