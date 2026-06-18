@@ -495,6 +495,38 @@ export default function MessengerCaseStudy() {
         </div>
       </section>
 
+      {/* Information Architecture */}
+      <section className="section-padding bg-card border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <SectionLabel label="Information Architecture" />
+          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))] flex flex-col gap-8">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]"
+            >
+              To support complex trading workflows, I structured Messenger into clear communication, document, and transaction modules.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="relative rounded-xl border border-white/[0.08] bg-bg overflow-hidden"
+            >
+              <img
+                src="/messenger-ia.png"
+                alt="Messenger information architecture — site map of communication, document, and transaction modules"
+                className="w-full h-auto"
+              />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-bg to-transparent" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Validation — Before & After */}
       <section className="section-padding border-t border-white/[0.06]">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
