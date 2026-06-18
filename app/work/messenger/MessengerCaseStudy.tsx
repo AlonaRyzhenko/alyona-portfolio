@@ -771,22 +771,29 @@ export default function MessengerCaseStudy() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-80px" }}
-              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="flex flex-col gap-4"
             >
-              {impacts.map((item) => (
-                <motion.div
-                  key={item.label}
-                  variants={fadeUp}
-                  className="p-6 rounded-xl bg-bg border border-white/[0.08] text-center"
-                >
-                  <div className="text-4xl font-bold text-accent mb-2">
-                    {item.value}
-                  </div>
-                  <div className="text-[#8892a4] text-sm leading-[1.4]">
-                    {item.label}
-                  </div>
-                </motion.div>
-              ))}
+              {impacts.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.title}
+                    variants={fadeUp}
+                    className="p-6 rounded-xl bg-bg border border-white/[0.08] flex items-start gap-5"
+                  >
+                    <span className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-accent" strokeWidth={1.5} />
+                    </span>
+                    <div className="flex flex-col gap-2 flex-1">
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <h3 className="text-white text-base font-medium">{item.title}</h3>
+                        <span className="px-2 py-0.5 rounded text-xs bg-accent/10 text-accent font-medium">{item.badge}</span>
+                      </div>
+                      <p className="text-[#D1D5DB] text-sm leading-[1.6]">{item.text}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </div>
         </div>
