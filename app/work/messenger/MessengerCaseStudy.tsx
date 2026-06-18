@@ -515,7 +515,7 @@ export default function MessengerCaseStudy() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
-            className="relative overflow-hidden mt-8"
+            className="relative overflow-hidden mt-8 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
           >
             <img
               src="/messenger-ia.png"
