@@ -515,7 +515,7 @@ export default function MessengerCaseStudy() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
-            className="mt-8 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
+            className="mt-24 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
           >
             <img
               src="/messenger-ia.png"
@@ -527,7 +527,7 @@ export default function MessengerCaseStudy() {
       </section>
 
       {/* Validation — Before & After */}
-      <section className="section-padding border-t border-white/[0.06]">
+      <section className="section-padding bg-card border-t border-white/[0.06]">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
           <SectionLabel label="Validation" />
           <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
@@ -545,9 +545,9 @@ export default function MessengerCaseStudy() {
                 <motion.div
                   key={item.title}
                   variants={fadeUp}
-                  className="rounded-xl border border-white/[0.08] overflow-hidden"
+                  className="rounded-xl bg-bg border border-white/[0.08] overflow-hidden"
                 >
-                  <div className="px-5 py-4 bg-card border-b border-white/[0.08]">
+                  <div className="px-5 py-4 bg-bg border-b border-white/[0.08]">
                     <h3 className="text-sm font-medium text-white/60">{item.title}</h3>
                   </div>
                   <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
