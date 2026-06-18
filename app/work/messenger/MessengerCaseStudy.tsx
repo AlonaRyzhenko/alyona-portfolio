@@ -179,7 +179,12 @@ export default function MessengerCaseStudy() {
           </svg>
           Back to Portfolio
         </Link>
-        <span className="ml-auto text-[#8892a4] text-xs">Messenger · 2026</span>
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="ml-auto text-[#8892a4] text-xs hover:text-white transition-colors cursor-pointer"
+        >
+          Messenger · 2026
+        </button>
       </div>
 
       {/* Hero */}
@@ -342,7 +347,7 @@ export default function MessengerCaseStudy() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-80px" }}
-              className="flex flex-col gap-12"
+              className="flex flex-col gap-16"
             >
               <motion.div variants={stagger} className="flex flex-col gap-5">
                 <motion.h2 variants={fadeUp} className="text-3xl font-medium text-white">
@@ -464,7 +469,7 @@ export default function MessengerCaseStudy() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-80px" }}
-              className="flex flex-col gap-12"
+              className="flex flex-col gap-16"
             >
               {/* Insights */}
               <div className="flex flex-col gap-4 max-w-[880px]">
