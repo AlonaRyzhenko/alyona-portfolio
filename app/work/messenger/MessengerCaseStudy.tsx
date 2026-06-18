@@ -440,7 +440,7 @@ export default function MessengerCaseStudy() {
               className="flex flex-col gap-12"
             >
               {/* Insights */}
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 max-w-[880px]">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
                 <div className="flex flex-col gap-2">
                   {insights.map((text, i) => {
