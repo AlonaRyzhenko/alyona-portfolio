@@ -411,7 +411,7 @@ export default function MessengerCaseStudy() {
                 <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px] mb-10">
                   Each tool solves part of the problem — speed, security, or compliance — but trading teams need all three in one place.
                 </motion.p>
-                <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 mb-10 w-fit max-w-full">
+                <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 mb-10 max-w-[780px]">
                   <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
                     <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
                     <span className="text-white text-base">The gap: no tool combines secure messaging with built-in document and compliance workflows.</span>
@@ -555,7 +555,7 @@ export default function MessengerCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6 }}
-              className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]"
+              className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]"
             >
               To support complex trading workflows, I structured Messenger into clear communication, document, and transaction modules.
             </motion.p>
