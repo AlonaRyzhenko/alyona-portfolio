@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Search, ScanSearch, Frame, CircleCheck } from "lucide-react";
+import { Search, ScanSearch, Frame, CircleCheck, ArrowRight, Lightbulb, Sparkles } from "lucide-react";
 
 const COVER_IMG = "/sign.png";
 
@@ -43,37 +43,25 @@ const processSteps = [
   },
 ];
 
-const researchFindings = [
-  {
-    label: "Static documents, dynamic process",
-    text: "Agreements were created as static PDFs traded over email — no version control, no workflow, no audit trail. Legal teams maintained spreadsheets to track status.",
-  },
-  {
-    label: "Multi-party complexity",
-    text: "Commodity agreements often involve 3+ parties with different permissions: initiator, reviewer, approver, and external counterparty — all with different views needed.",
-  },
-  {
-    label: "Compliance & governance",
-    text: "Financial regulators required immutable signing records and role-based access controls — features that off-the-shelf tools couldn't provide for the trading context.",
-  },
+const researchMethods = [
+  "Workflow Analysis",
+  "Stakeholder Collaboration",
+  "System Documentation Review",
 ];
 
-const opportunities = [
-  {
-    num: "01",
-    title: "Lifecycle-driven workflows",
-    text: "Transform agreements from documents into structured, stateful objects that progress through a defined lifecycle with clear ownership at each stage.",
-  },
-  {
-    num: "02",
-    title: "Role-based permission model",
-    text: "Design a granular permission system that gives each party the right view and actions at the right moment in the workflow.",
-  },
-  {
-    num: "03",
-    title: "Embedded governance",
-    text: "Build compliance controls — version history, signing certificates, retention policies — directly into the product UX rather than as an afterthought.",
-  },
+
+const researchFocus = [
+  { num: "1", title: "Agreement Lifecycle Mapping", text: "Studied how agreements move from drafting to approval, signing, and renewal to find visibility gaps and delays." },
+  { num: "2", title: "Governance & Permission Analysis", text: "Reviewed roles and approval ownership to understand access risks and workflow confusion." },
+  { num: "3", title: "Document Structure Audit", text: "Analyzed agreement templates to see how static formats limit automation and tracking." },
+  { num: "4", title: "Platform Dependency Mapping", text: "Explored how identity verification and storage tools break agreement workflows into separate steps." },
+  { num: "5", title: "Competitive Benchmarking", text: "Reviewed enterprise contract tools to understand gaps in lifecycle visibility and governance clarity." },
+];
+
+const insights = [
+  "Lack of lifecycle visibility slowed agreement execution and increased coordination effort.",
+  "Governance was unclear — access rights and approval ownership lacked contextual visibility.",
+  "Static agreement formats limited automation, tracking, and seamless execution across systems.",
 ];
 
 const beforeAfter = [
@@ -300,16 +288,61 @@ export default function SignCaseStudy() {
               className="flex flex-col gap-6"
             >
               <motion.h2 variants={fadeUp} className="text-3xl font-medium">
-                Key findings
+                Research Approach
               </motion.h2>
-              {researchFindings.map((f) => (
-                <motion.div
-                  key={f.label}
-                  variants={fadeUp}
-                  className="p-6 rounded-xl bg-card border border-white/[0.08]"
-                >
-                  <h3 className="text-accent text-sm font-medium mb-2">{f.label}</h3>
-                  <p className="text-white/70 text-base leading-[1.6]">{f.text}</p>
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+                To understand where agreement workflows were failing enterprise trading teams, I analyzed document lifecycle complexity, governance structures, and system dependencies across the trading platform.
+              </motion.p>
+
+              <motion.div variants={stagger} className="max-w-[720px]">
+                <motion.h3 variants={fadeUp} className="text-[#9CA3AF] text-sm font-medium mb-3">
+                  Methods
+                </motion.h3>
+                <motion.div variants={stagger} className="flex flex-wrap gap-2">
+                  {researchMethods.map((m) => (
+                    <motion.span
+                      key={m}
+                      variants={fadeUp}
+                      className="px-3 py-1.5 rounded-lg bg-card border border-white/[0.08] text-white text-sm"
+                    >
+                      {m}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 max-w-[780px]">
+                <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
+                  <Sparkles className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
+                  <span className="text-white text-base">Due to regulatory sensitivity and the product's early stage, direct user access was limited — research relied primarily on workflow analysis, stakeholder collaboration, and system documentation review.</span>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Focus */}
+      <section className="section-padding bg-card border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <SectionLabel label="Research Focus" />
+          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="flex flex-col gap-6 max-w-[780px]"
+            >
+              {researchFocus.map((f) => (
+                <motion.div key={f.num} variants={fadeUp} className="flex items-start gap-4">
+                  <span className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium flex-shrink-0">
+                    {f.num}
+                  </span>
+                  <div>
+                    <h4 className="text-white text-lg font-medium mb-1">{f.title}</h4>
+                    <p className="text-[#D1D5DB] text-base leading-[1.6]">{f.text}</p>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -317,37 +350,46 @@ export default function SignCaseStudy() {
         </div>
       </section>
 
-      {/* Insights & Opportunities */}
-      <section className="section-padding bg-card border-t border-white/[0.06]">
+      {/* Key Insights */}
+      <section className="section-padding border-t border-white/[0.06]">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
-          <SectionLabel label="Insights & Opportunities" />
-          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-80px" }}
-              className="grid sm:grid-cols-3 gap-6"
-            >
-              {opportunities.map((o) => (
-                <motion.div
-                  key={o.num}
-                  variants={fadeUp}
-                  className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
-                >
-                  <span className="text-accent/60 text-3xl font-bold leading-none">
-                    {o.num}
-                  </span>
-                  <div>
-                    <h3 className="text-base font-medium text-white mb-2">
-                      {o.title}
-                    </h3>
-                    <p className="text-[#8892a4] text-sm leading-[1.6]">{o.text}</p>
-                  </div>
-                </motion.div>
-              ))}
+          <SectionLabel label="Key Insights" />
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            className="max-w-[1068px] flex flex-col gap-8 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
+          >
+            <motion.h2 variants={fadeUp} className="text-3xl font-medium">
+              Key Insights
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+              These insights shaped the core design principles and solution direction.
+            </motion.p>
+            <motion.div variants={fadeUp} className="flex flex-col gap-4 max-w-[780px]">
+              <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
+              <div className="flex flex-col gap-4">
+                {insights.map((text, i) => {
+                  const isFirst = i === 0;
+                  const isLast = i === insights.length - 1;
+                  const grad = isFirst
+                    ? "bg-gradient-to-b from-accent/40 to-white/[0.08]"
+                    : isLast
+                    ? "bg-gradient-to-t from-accent/40 to-white/[0.08]"
+                    : "bg-white/[0.08]";
+                  return (
+                    <motion.div key={text} variants={fadeUp} className={`rounded-xl p-[1px] ${grad}`}>
+                      <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-4">
+                        <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
+                        <p className="text-white text-base leading-[1.6]">{text}</p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
