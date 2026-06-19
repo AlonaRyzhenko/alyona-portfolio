@@ -288,12 +288,12 @@ export default function MessengerCaseStudy() {
             {/* Problem statement — card matching research findings style */}
             <motion.div
               variants={fadeUp}
-              className="p-6 rounded-xl bg-card border border-white/[0.08]"
+              className="p-6 rounded-xl bg-card border border-white/[0.08] max-w-[720px]"
             >
               <h3 className="text-accent text-sm font-medium mb-2">
                 Problem statement
               </h3>
-              <p className="text-[#D1D5DB] text-base leading-[1.6] max-w-[68ch]">
+              <p className="text-[#D1D5DB] text-base leading-[1.6]">
                 Trading teams rely on messaging to coordinate deals and exchange sensitive documents — but existing tools lack compliance workflows, audit visibility, and integration with trading systems. This forces users to switch between multiple tools to complete a single workflow.
               </p>
             </motion.div>
@@ -393,13 +393,13 @@ export default function MessengerCaseStudy() {
                 <motion.h2 variants={fadeUp} className="text-3xl font-medium">
                   Key findings
                 </motion.h2>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 max-w-[720px]">
                   {researchFindings.map((f) => (
                     <motion.div key={f.label} variants={fadeUp} className="p-6 rounded-xl bg-card border border-white/[0.08] flex items-start gap-4">
                       <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
                         <h3 className="text-accent text-sm font-medium mb-2">{f.label}</h3>
-                        <p className="text-[#D1D5DB] text-base leading-[1.6] max-w-[68ch]">{f.text}</p>
+                        <p className="text-[#D1D5DB] text-base leading-[1.6]">{f.text}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -718,7 +718,7 @@ export default function MessengerCaseStudy() {
 
                 <div className="flex flex-col gap-4">
                   <h3 className="text-[#9CA3AF] text-sm font-medium">Key Findings &amp; Resolutions</h3>
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-3 max-w-[720px]">
                     {keyFindings.map((f) => (
                       <div key={f.title} className="p-5 rounded-xl bg-bg border border-white/[0.08] flex items-start gap-4">
                         <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
