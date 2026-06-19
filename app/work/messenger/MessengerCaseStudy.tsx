@@ -205,7 +205,7 @@ export default function MessengerCaseStudy() {
         </Link>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="ml-auto text-[#8892a4] text-xs hover:text-white transition-colors cursor-pointer"
+          className="ml-auto text-[#8892a4] text-sm font-medium hover:text-white transition-colors cursor-pointer"
         >
           Messenger · 2026
         </button>
