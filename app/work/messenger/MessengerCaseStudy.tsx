@@ -86,10 +86,8 @@ const opportunities = [
 ];
 
 const insights = [
-  "Compliance workflows are separated from chat, requiring users to switch tools.",
-  "Security status is not clearly visible. Users lack confidence in document and conversation security.",
-  "Administrative control is limited. Enterprise teams need flexible permissions and monitoring tools.",
-  "Navigation structure doesn't match user mental models — core actions are buried.",
+  "Without visible security status, users can't trust that sensitive documents and conversations are protected — trust has to be designed, not assumed.",
+  "Enterprise adoption depends on administrative control — teams need flexible permissions and monitoring before they can rely on the platform.",
 ];
 
 const iterationSteps = [
@@ -492,7 +490,7 @@ export default function MessengerCaseStudy() {
               className="flex flex-col gap-16"
             >
               {/* Insights */}
-              <div className="flex flex-col gap-4 max-w-[880px]">
+              <div className="flex flex-col gap-4 max-w-[780px]">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
                 <div className="flex flex-col gap-4">
                   {insights.map((text, i) => {
