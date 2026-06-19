@@ -771,7 +771,7 @@ export default function MessengerCaseStudy() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-80px" }}
-              className="flex flex-col gap-4"
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
             >
               {impacts.map((item) => {
                 const Icon = item.icon;
