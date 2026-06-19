@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Search, ScanSearch, Frame, CircleCheck } from "lucide-react";
 
 const COVER_IMG = "/sign.png";
 
@@ -17,24 +18,28 @@ const stagger = {
 
 const processSteps = [
   {
-    icon: "🔍",
-    title: "Discovery",
-    desc: "Mapped the full agreement lifecycle — creation, negotiation, signing, and archiving.",
+    icon: Search,
+    title: "Discover",
+    desc: "Mapped the agreement ecosystem, workflows, and platform integrations.",
+    tags: ["ecosystem mapping", "workflow audit", "stakeholders"],
   },
   {
-    icon: "👥",
-    title: "User Research",
-    desc: "Interviewed traders, legal teams, and compliance officers across 3 enterprise clients.",
+    icon: ScanSearch,
+    title: "Research & Insights",
+    desc: "Analyzed trader workflows and benchmarked enterprise agreement tools.",
+    tags: ["workflow analysis", "competitor review", "user needs"],
   },
   {
-    icon: "🗂",
-    title: "IA & Flows",
-    desc: "Redesigned the information architecture and built new multi-party workflow models.",
+    icon: Frame,
+    title: "Concept & Interaction Design",
+    desc: "Designed structured agreement flows and role-aware interactions.",
+    tags: ["interaction design", "IA refinement", "workflow design"],
   },
   {
-    icon: "✅",
+    icon: CircleCheck,
     title: "Validation",
-    desc: "Tested 3 complete agreement flows with 12 participants across 2 usability sessions.",
+    desc: "Refined solutions through stakeholder reviews and iterative testing.",
+    tags: ["usability testing", "design iteration", "engineering alignment"],
   },
 ];
 
@@ -249,21 +254,34 @@ export default function SignCaseStudy() {
               viewport={{ once: true, margin: "-80px" }}
               className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
             >
-              {processSteps.map((step) => (
-                <motion.div
-                  key={step.title}
-                  variants={fadeUp}
-                  className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
-                >
-                  <span className="text-2xl">{step.icon}</span>
-                  <div>
-                    <h3 className="text-base font-medium text-white mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-[#8892a4] text-sm leading-[1.6]">{step.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+              {processSteps.map((step) => {
+                const Icon = step.icon;
+                return (
+                  <motion.div
+                    key={step.title}
+                    variants={fadeUp}
+                    className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
+                  >
+                    <span className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-accent" strokeWidth={1.5} />
+                    </span>
+                    <div>
+                      <h3 className="text-base font-medium text-white mb-2">{step.title}</h3>
+                      <p className="text-[#D1D5DB] text-sm leading-[1.6] mb-3">{step.desc}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {step.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-white text-xs"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </div>
         </div>
