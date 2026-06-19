@@ -405,7 +405,7 @@ export default function MessengerCaseStudy() {
 
               {/* Competitive analysis */}
               <motion.div variants={stagger}>
-                <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-6">
+                <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-4">
                   Competitive analysis
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px] mb-10">
@@ -414,7 +414,7 @@ export default function MessengerCaseStudy() {
                 <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 mb-10 max-w-[780px]">
                   <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
                     <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
-                    <span className="text-white text-base">The gap: no tool combines secure messaging with built-in document and compliance workflows.</span>
+                    <span className="text-white text-base">The gap: no tool combines secure messaging, documents, and compliance.</span>
                   </div>
                 </motion.div>
                 <h3 className="text-[#9CA3AF] text-sm font-medium mb-4">Competitor Comparison</h3>
@@ -590,7 +590,7 @@ export default function MessengerCaseStudy() {
             >
               <motion.div variants={fadeUp} className="flex flex-col gap-5">
                 <h2 className="text-3xl font-medium text-white">Validation Approach</h2>
-                <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                   To validate design decisions, I conducted iterative usability sessions with 5–6 internal users throughout the process. Sessions focused on core workflows — navigation, document sharing, and trading room access.
                 </p>
                 <div className="flex flex-col gap-3">
@@ -608,7 +608,7 @@ export default function MessengerCaseStudy() {
               <motion.div variants={fadeUp} className="flex flex-col gap-6">
                 <div className="flex flex-col gap-3">
                   <h2 className="text-3xl font-medium text-white">Iteration Process</h2>
-                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                     Each design proposal was tested, revised, and retested before engineering handoff.
                   </p>
                 </div>
@@ -630,7 +630,7 @@ export default function MessengerCaseStudy() {
               <motion.div variants={fadeUp} className="flex flex-col gap-6">
                 <div className="flex flex-col gap-3">
                   <h2 className="text-3xl font-medium text-white">Before &amp; After</h2>
-                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                     Three key changes — navigation structure, trading room design, and Drive integration.
                   </p>
                 </div>
@@ -675,7 +675,7 @@ export default function MessengerCaseStudy() {
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-3">
                     <h2 className="text-3xl font-medium text-white">Tasks &amp; Findings</h2>
-                    <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                    <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                       5 tasks tested across 2 sessions with 5–6 internal users.
                     </p>
                   </div>
@@ -715,7 +715,7 @@ export default function MessengerCaseStudy() {
 
                 <div className="flex flex-col gap-4">
                   <h3 className="text-[#9CA3AF] text-sm font-medium">Key Findings &amp; Resolutions</h3>
-                  <div className="flex flex-col gap-3 max-w-[720px]">
+                  <div className="flex flex-col gap-3 max-w-[780px]">
                     {keyFindings.map((f) => (
                       <div key={f.title} className="p-5 rounded-xl bg-bg border border-white/[0.08] flex items-start gap-4">
                         <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
@@ -729,11 +729,11 @@ export default function MessengerCaseStudy() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent/60 to-transparent">
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent/60 to-transparent max-w-[780px]">
                 <div className="rounded-[11px] bg-[#111827]/95 px-6 py-5 flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <span className="text-white text-base leading-[1.6]">
-                    Sessions confirmed that all 5 critical usability gaps were resolved between session 1 and session 2 — navigation, trading room access, document sharing, file upload, and delivery confirmation. All tested users completed core tasks without guidance in the final iteration.
+                    By the final iteration, all tested users completed core tasks without guidance — every critical usability gap surfaced in session 1 was resolved.
                   </span>
                 </div>
               </motion.div>
