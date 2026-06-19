@@ -344,7 +344,7 @@ export default function MessengerCaseStudy() {
                     </div>
                     <div className="flex flex-wrap gap-2 mt-1">
                       {step.tags.map((tag) => (
-                        <span key={tag} className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-[#9CA3AF] text-xs">
+                        <span key={tag} className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-white text-xs">
                           {tag}
                         </span>
                       ))}
@@ -373,7 +373,7 @@ export default function MessengerCaseStudy() {
                 <motion.h2 variants={fadeUp} className="text-3xl font-medium text-white">
                   Research Approach
                 </motion.h2>
-                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px]">
+                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                   To understand where Messenger was failing users in regulated trading environments, I audited the existing product, reviewed compliance requirements, and benchmarked competitor tools.
                 </motion.p>
                 <motion.div variants={fadeUp} className="flex flex-col gap-3">
@@ -392,7 +392,7 @@ export default function MessengerCaseStudy() {
                 <motion.h2 variants={fadeUp} className="text-3xl font-medium">
                   Key findings
                 </motion.h2>
-                <div className="flex flex-col gap-4 max-w-[720px]">
+                <div className="flex flex-col gap-4 max-w-[780px]">
                   {researchFindings.map((f) => (
                     <motion.div key={f.label} variants={fadeUp} className="p-6 rounded-xl bg-card border border-white/[0.08] flex items-start gap-4">
                       <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
@@ -410,7 +410,7 @@ export default function MessengerCaseStudy() {
                 <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-6">
                   Competitive analysis
                 </motion.h2>
-                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[880px] mb-10">
+                <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px] mb-10">
                   Existing tools optimize for speed or compliance — but none combine both with integrated document workflows.
                 </motion.p>
                 <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 mb-10 w-fit max-w-full">
