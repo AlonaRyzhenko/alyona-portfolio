@@ -259,7 +259,7 @@ export default function MessengerCaseStudy() {
               <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-4">
                 About the project
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[68ch]">
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                 Messenger is a secure communication platform for regulated trading environments. It connects messaging directly to document management, verification workflows, and transaction records — so conversations stay tied to trading documentation and compliance, instead of living in a separate chat tool.
               </motion.p>
             </motion.div>
@@ -272,7 +272,7 @@ export default function MessengerCaseStudy() {
               >
                 My role
               </motion.h3>
-              <motion.div variants={stagger} className="flex flex-wrap gap-2">
+              <motion.div variants={stagger} className="flex flex-wrap gap-2 max-w-[640px]">
                 {responsibilities.map((r) => (
                   <motion.span
                     key={r}
@@ -288,7 +288,7 @@ export default function MessengerCaseStudy() {
             {/* Problem statement — card matching research findings style */}
             <motion.div
               variants={fadeUp}
-              className="p-6 rounded-xl bg-card border border-white/[0.08] max-w-[720px]"
+              className="p-6 rounded-xl bg-card border border-white/[0.08] max-w-[780px]"
             >
               <h3 className="text-accent text-sm font-medium mb-2">
                 Problem statement
@@ -306,7 +306,7 @@ export default function MessengerCaseStudy() {
               >
                 Design goal
               </motion.h3>
-              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[68ch]">
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                 Redesign Messenger to support secure, compliant communication workflows — with document sharing, action discoverability, and security visibility built directly into the conversation layer.
               </motion.p>
             </motion.div>
