@@ -272,7 +272,7 @@ export default function MessengerCaseStudy() {
               >
                 My role
               </motion.h3>
-              <motion.div variants={stagger} className="flex flex-wrap gap-2 max-w-[640px]">
+              <motion.div variants={stagger} className="flex flex-wrap gap-2 max-w-[720px]">
                 {responsibilities.map((r) => (
                   <motion.span
                     key={r}
@@ -341,7 +341,6 @@ export default function MessengerCaseStudy() {
                       <h3 className="text-base font-medium text-white mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-[#D1D5DB] text-sm leading-[1.6]">{step.desc}</p>
                     </div>
                     <div className="flex flex-wrap gap-2 mt-1">
                       {step.tags.map((tag) => (
