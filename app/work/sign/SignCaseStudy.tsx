@@ -125,7 +125,12 @@ export default function SignCaseStudy() {
           </svg>
           Back to Portfolio
         </Link>
-        <span className="ml-auto text-[#8892a4] text-xs">Sign · 2026</span>
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="ml-auto text-[#8892a4] text-sm font-medium hover:text-white transition-colors cursor-pointer"
+        >
+          Sign · 2026
+        </button>
       </div>
 
       {/* Hero */}
