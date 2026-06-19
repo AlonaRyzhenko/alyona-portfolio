@@ -71,17 +71,17 @@ const opportunities = [
   {
     num: "01",
     title: "Unified action surface",
-    text: "Merge message, document, and verification actions into a single composer — eliminating tool switching.",
+    text: "Merge message, document, and verification into one composer.",
   },
   {
     num: "02",
     title: "Compliance by design",
-    text: "Embed audit trail visibility and retention policy controls directly into the message UI.",
+    text: "Surface audit trails and retention controls in the message UI.",
   },
   {
     num: "03",
     title: "Attention prioritisation",
-    text: "Surface actionable items — pending approvals, document requests — in a dedicated triage view.",
+    text: "Triage pending approvals and document requests in one view.",
   },
 ];
 
@@ -372,7 +372,7 @@ export default function MessengerCaseStudy() {
                   Research Approach
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
-                  To understand where Messenger was failing users in regulated trading environments, I audited the existing product, reviewed compliance requirements, and benchmarked competitor tools.
+                  To understand where Messenger was failing users in regulated trading environments, I audited the current experience against real compliance-bound workflows.
                 </motion.p>
                 <motion.div variants={fadeUp} className="flex flex-col gap-3">
                   <h3 className="text-[#9CA3AF] text-sm font-medium">Methods</h3>
@@ -409,12 +409,12 @@ export default function MessengerCaseStudy() {
                   Competitive analysis
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px] mb-10">
-                  Existing tools optimize for speed or compliance — but none combine both with integrated document workflows.
+                  Each tool solves part of the problem — speed, security, or compliance — but trading teams need all three in one place.
                 </motion.p>
                 <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 mb-10 w-fit max-w-full">
                   <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
                     <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
-                    <span className="text-white text-base">Combine secure messaging + document workflows.</span>
+                    <span className="text-white text-base">The gap: no tool combines secure messaging with built-in document and compliance workflows.</span>
                   </div>
                 </motion.div>
                 <h3 className="text-[#9CA3AF] text-sm font-medium mb-4">Competitor Comparison</h3>
@@ -505,7 +505,7 @@ export default function MessengerCaseStudy() {
                       <motion.div key={text} variants={fadeUp} className={`rounded-xl p-[1px] ${grad}`}>
                         <div className="rounded-[11px] bg-bg px-4 py-4 flex items-center gap-4">
                           <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
-                          <p className="text-[#D1D5DB] text-base leading-[1.6]">{text}</p>
+                          <p className="text-white text-base leading-[1.6]">{text}</p>
                         </div>
                       </motion.div>
                     );
@@ -514,7 +514,7 @@ export default function MessengerCaseStudy() {
               </div>
 
               {/* Opportunities */}
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 max-w-[780px]">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Opportunities</h3>
                 <div className="flex flex-col gap-6">
                   {opportunities.map((o) => (
@@ -532,7 +532,7 @@ export default function MessengerCaseStudy() {
               </div>
 
               {/* Summary */}
-              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent/60 to-transparent">
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent/60 to-transparent max-w-[780px]">
                 <div className="rounded-[11px] bg-[#111827]/95 px-6 py-5 flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <span className="text-white text-base leading-[1.6]">
