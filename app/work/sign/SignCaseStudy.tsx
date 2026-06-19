@@ -97,12 +97,12 @@ const impacts = [
 ];
 
 const responsibilities = [
-  "UI/UX Lead",
-  "User Research",
-  "IA Design",
+  "UX Research",
+  "Workflow & System Analysis",
+  "Information Architecture",
   "Interaction Design",
-  "Design System",
-  "Usability Testing",
+  "UI Design",
+  "Enterprise Usability Optimization",
 ];
 
 export default function SignCaseStudy() {
@@ -177,58 +177,62 @@ export default function SignCaseStudy() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
-            className="max-w-[1068px] grid lg:grid-cols-3 gap-12 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
+            className="max-w-[1068px] flex flex-col gap-10 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
           >
-            <div className="lg:col-span-2 flex flex-col gap-8">
-              <motion.div variants={stagger}>
-                <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-4">
-                  About the project
-                </motion.h2>
-                <motion.p variants={fadeUp} className="text-white/70 text-lg leading-[1.7]">
-                  Sign is an agreement workflow platform built for commodities
-                  trading firms — part of the same fintech ecosystem as
-                  Messenger, Exchange, and Vault. It replaces fragmented
-                  email-and-PDF workflows with structured, multi-party agreement
-                  lifecycles that satisfy regulatory requirements for auditability
-                  and governance.
-                </motion.p>
-              </motion.div>
-              <motion.div variants={stagger}>
-                <motion.h3
-                  variants={fadeUp}
-                  className="text-[#8892a4] text-sm font-medium mb-3"
-                >
-                  Design goal
-                </motion.h3>
-                <motion.p variants={fadeUp} className="text-white/80 text-base leading-[1.7]">
-                  Redesign the entire agreement creation-to-completion journey
-                  so that every party knows their role, every action is
-                  traceable, and the signing process is native to the platform —
-                  eliminating the need to leave the ecosystem for any step of
-                  the workflow.
-                </motion.p>
-              </motion.div>
-            </div>
+            {/* About the project */}
+            <motion.div variants={stagger}>
+              <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-4">
+                About the project
+              </motion.h2>
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+                Sign is an enterprise agreement management platform for regulated trading environments. Teams create, negotiate, approve, and execute agreements — including digital titles — in a secure, auditable workflow, with identity verification, permission governance, and document storage built into the trading ecosystem.
+              </motion.p>
+            </motion.div>
 
-            <div>
+            {/* My role */}
+            <motion.div variants={stagger}>
               <motion.h3
                 variants={fadeUp}
-                className="text-[#8892a4] text-sm font-medium mb-4"
+                className="text-[#9CA3AF] text-sm font-medium mb-4"
               >
                 My role
               </motion.h3>
-              <motion.div variants={stagger} className="flex flex-wrap gap-2">
+              <motion.div variants={stagger} className="flex flex-wrap gap-2 max-w-[720px]">
                 {responsibilities.map((r) => (
                   <motion.span
                     key={r}
                     variants={fadeUp}
-                    className="px-3 py-1.5 rounded-lg bg-card border border-white/[0.08] text-white/80 text-sm"
+                    className="px-3 py-1.5 rounded-lg bg-card border border-white/[0.08] text-white text-sm"
                   >
                     {r}
                   </motion.span>
                 ))}
               </motion.div>
-            </div>
+            </motion.div>
+
+            {/* Problem statement */}
+            <motion.div
+              variants={fadeUp}
+              className="p-6 rounded-xl bg-card border border-white/[0.08] max-w-[780px]"
+            >
+              <h3 className="text-accent text-sm font-medium mb-2">Problem statement</h3>
+              <p className="text-[#D1D5DB] text-base leading-[1.6]">
+                Commodity trading relies on high-risk agreements and complex approval structures, but existing e-signature tools aren't built for trading workflows or compliance-driven execution. Users juggle fragmented systems to manage documents, verify identities, and control access — increasing operational friction and compliance exposure.
+              </p>
+            </motion.div>
+
+            {/* Design goal */}
+            <motion.div variants={stagger}>
+              <motion.h3
+                variants={fadeUp}
+                className="text-[#9CA3AF] text-sm font-medium mb-3"
+              >
+                Design goal
+              </motion.h3>
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+                Design a unified agreement workflow that reduces system switching, clarifies permission ownership, and supports secure, scalable document execution in enterprise trading environments.
+              </motion.p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
