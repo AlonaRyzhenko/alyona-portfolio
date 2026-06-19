@@ -147,7 +147,7 @@ const impacts = [
   {
     icon: Sparkles,
     title: "User Experience",
-    text: "Restructured navigation and explicit error states resolved the most critical usability gaps — key actions are now findable without guidance, confirmed in usability sessions.",
+    text: "Restructured navigation and explicit error states resolved the most critical usability gaps — users now complete core tasks confidently.",
     badge: "task clarity",
     trend: "up",
   },
@@ -411,7 +411,7 @@ export default function MessengerCaseStudy() {
                 <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px] mb-10">
                   Each tool solves part of the problem — speed, security, or compliance — but trading teams need all three in one place.
                 </motion.p>
-                <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 mb-10 max-w-[780px]">
+                <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 mb-10 w-fit max-w-[780px]">
                   <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
                     <Lightbulb className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
                     <span className="text-white text-base">The gap: no tool combines secure messaging, documents, and compliance.</span>
@@ -773,12 +773,12 @@ export default function MessengerCaseStudy() {
                   <motion.div
                     key={item.title}
                     variants={fadeUp}
-                    className="p-6 rounded-xl bg-bg border border-white/[0.08] flex items-start gap-5"
+                    className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
                   >
                     <span className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
                       <Icon className="w-5 h-5 text-accent" strokeWidth={1.5} />
                     </span>
-                    <div className="flex flex-col gap-2 flex-1">
+                    <div className="flex flex-col gap-2">
                       <div className="flex items-center gap-3 flex-wrap">
                         <h3 className="text-white text-base font-medium">{item.title}</h3>
                         <span className="px-2 py-0.5 rounded text-xs bg-accent/10 text-accent font-medium">{item.badge}</span>
