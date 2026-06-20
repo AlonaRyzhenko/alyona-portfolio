@@ -51,17 +51,17 @@ const researchMethods = [
 
 
 const researchFocus = [
-  { num: "1", title: "Agreement Lifecycle Mapping", text: "How agreements move from draft to renewal." },
-  { num: "2", title: "Governance & Permission Analysis", text: "Roles, approval ownership, and access risks." },
-  { num: "3", title: "Document Structure Audit", text: "How static templates limit automation." },
-  { num: "4", title: "Platform Dependency Mapping", text: "How external tools fragment workflows." },
-  { num: "5", title: "Competitive Benchmarking", text: "Gaps in enterprise contract tools." },
+  { num: "01", title: "Agreement Lifecycle Mapping", text: "How agreements move from draft to renewal." },
+  { num: "02", title: "Governance & Permission Analysis", text: "Roles, approval ownership, and access risks." },
+  { num: "03", title: "Document Structure Audit", text: "How static templates limit automation." },
+  { num: "04", title: "Platform Dependency Mapping", text: "How external tools fragment workflows." },
+  { num: "05", title: "Competitive Benchmarking", text: "Gaps in enterprise contract tools." },
 ];
 
 const insights = [
   "Lack of lifecycle visibility slowed agreement execution and increased coordination effort.",
-  "Governance was unclear — access rights and approval ownership lacked contextual visibility.",
-  "Static agreement formats limited automation, tracking, and seamless execution across systems.",
+  "Governance was unclear — access and approval ownership lacked visibility.",
+  "Static formats limited automation, tracking, and execution across systems.",
 ];
 
 const beforeAfter = [
@@ -287,7 +287,7 @@ export default function SignCaseStudy() {
             className="max-w-[1068px] flex flex-col gap-16 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
           >
             {/* Research Approach */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
               <motion.h2 variants={fadeUp} className="text-3xl font-medium">
                 Research Approach
               </motion.h2>
@@ -310,7 +310,7 @@ export default function SignCaseStudy() {
                   ))}
                 </motion.div>
               </motion.div>
-              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 max-w-[780px]">
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 max-w-[780px] mt-16">
                 <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
                   <Sparkles className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
                   <span className="text-white text-base">Due to regulatory sensitivity and the product's early stage, direct user access was limited — research relied primarily on workflow analysis, stakeholder collaboration, and system documentation review.</span>
@@ -319,8 +319,8 @@ export default function SignCaseStudy() {
             </div>
 
             {/* Research Focus */}
-            <div className="flex flex-col gap-6">
-              <motion.h2 variants={fadeUp} className="text-3xl font-medium">
+            <div>
+              <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-6">
                 Research Focus
               </motion.h2>
               <div className="flex flex-col gap-6 max-w-[780px]">
@@ -339,14 +339,14 @@ export default function SignCaseStudy() {
             </div>
 
             {/* Key Insights */}
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
               <motion.h2 variants={fadeUp} className="text-3xl font-medium">
                 Key Insights
               </motion.h2>
               <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                 These insights shaped the core design principles and solution direction.
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-col gap-4 max-w-[780px]">
+              <motion.div variants={fadeUp} className="flex flex-col gap-4 max-w-[780px] mt-8">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
                 <div className="flex flex-col gap-4">
                   {insights.map((text, i) => {
