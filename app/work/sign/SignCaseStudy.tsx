@@ -436,7 +436,7 @@ export default function SignCaseStudy() {
       </section>
 
       {/* Validation — Before & After */}
-      <section className="section-padding bg-card border-t border-white/[0.06]">
+      <section className="section-padding bg-bg border-t border-white/[0.06]">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
           <SectionLabel label="Validation" />
           <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
@@ -473,7 +473,7 @@ export default function SignCaseStudy() {
                 </div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {iterationSteps.map((step) => (
-                    <div key={step.num} className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4">
+                    <div key={step.num} className="p-6 rounded-xl bg-card border border-white/[0.08] flex flex-col gap-4">
                       <span className="w-11 h-11 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-medium">
                         {step.num}
                       </span>
@@ -498,7 +498,7 @@ export default function SignCaseStudy() {
                     <motion.div
                       key={item.title}
                       variants={fadeUp}
-                      className="rounded-xl border border-white/[0.08] overflow-hidden bg-bg"
+                      className="rounded-xl border border-white/[0.08] overflow-hidden bg-card"
                     >
                       <div className="px-5 py-4 border-b border-white/[0.08]">
                         <h3 className="text-base font-medium text-white">{item.title}</h3>
@@ -542,7 +542,7 @@ export default function SignCaseStudy() {
                   <div className="rounded-xl border border-white/[0.08] overflow-hidden">
                   <table className="w-full text-left">
                     <thead>
-                      <tr className="border-b border-white/[0.08] bg-bg">
+                      <tr className="border-b border-white/[0.08] bg-card">
                         <th className="px-5 py-4 text-[#8892a4] font-medium">Task</th>
                         <th className="px-5 py-4 text-[#8892a4] font-medium text-center">Session 1</th>
                         <th className="px-5 py-4 text-[#8892a4] font-medium text-center">Session 2</th>
@@ -550,7 +550,7 @@ export default function SignCaseStudy() {
                     </thead>
                     <tbody>
                       {tasks.map((row, i) => (
-                        <tr key={row.task} className={`border-b border-white/[0.06] last:border-0 ${i % 2 === 0 ? "" : "bg-bg/40"}`}>
+                        <tr key={row.task} className={`border-b border-white/[0.06] last:border-0 ${i % 2 === 0 ? "" : "bg-card/40"}`}>
                           <td className="px-5 py-4 text-[#D1D5DB]">{row.task}</td>
                           {[row.s1, row.s2].map((status, ci) => (
                             <td key={ci} className="px-5 py-4 text-center">
@@ -574,9 +574,9 @@ export default function SignCaseStudy() {
 
                 <div className="flex flex-col gap-4">
                   <h3 className="text-[#9CA3AF] text-sm font-medium">Key Findings &amp; Resolutions</h3>
-                  <div className="flex flex-col gap-3 max-w-[780px]">
+                  <div className="flex flex-col gap-3 max-w-[620px]">
                     {keyFindings.map((f) => (
-                      <div key={f.title} className="p-5 rounded-xl bg-bg border border-white/[0.08] flex items-start gap-4">
+                      <div key={f.title} className="p-5 rounded-xl bg-card border border-white/[0.08] flex items-start gap-4">
                         <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                         <div>
                           <p className="text-accent text-sm font-medium mb-1">{f.title}</p>
@@ -687,7 +687,7 @@ export default function SignCaseStudy() {
 function SectionLabel({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-4 mb-12">
-      <span className="text-[#8892a4] text-sm font-normal whitespace-nowrap">
+      <span className="text-[#E5E7EB] text-sm font-normal whitespace-nowrap">
         {label}
       </span>
       <span className="flex-1 h-px bg-white/[0.06]" />
