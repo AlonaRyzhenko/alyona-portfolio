@@ -373,6 +373,37 @@ export default function SignCaseStudy() {
         </div>
       </section>
 
+      {/* Information Architecture */}
+      <section className="section-padding bg-bg border-t border-white/[0.06]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <SectionLabel label="Information Architecture" />
+          <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]"
+            >
+              Structured Sign around 6 core modules — agreements, templates, documents, digital titles, notifications, and contacts — with clear lifecycle entry points.
+            </motion.p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="mt-24 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
+          >
+            <img
+              src="/sign-information-architecture.png"
+              alt="Sign information architecture — site map of agreements, templates, documents, digital titles, notifications, and contacts modules"
+              className="w-full h-auto block rounded-xl max-w-[920px]"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Validation — Before & After */}
       <section className="section-padding border-t border-white/[0.06]">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
