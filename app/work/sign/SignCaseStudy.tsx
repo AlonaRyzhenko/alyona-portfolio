@@ -327,7 +327,7 @@ export default function SignCaseStudy() {
               <div className="flex flex-col gap-6 max-w-[780px]">
                 {researchFocus.map((f) => (
                   <motion.div key={f.num} variants={fadeUp} className="flex items-start gap-4">
-                    <span className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium flex-shrink-0">
+                    <span className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium flex-shrink-0">
                       {f.num}
                     </span>
                     <div>
@@ -347,7 +347,7 @@ export default function SignCaseStudy() {
               <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                 These insights shaped the core design principles and solution direction.
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-col gap-4 max-w-[780px] mt-6">
+              <motion.div variants={fadeUp} className="flex flex-col gap-4 max-w-[780px] mt-5">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
                 <div className="flex flex-col gap-4">
                   {insights.map((text, i) => {
