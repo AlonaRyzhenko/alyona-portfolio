@@ -284,17 +284,17 @@ export default function SignCaseStudy() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
-            className="max-w-[1068px] flex flex-col gap-12 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
+            className="max-w-[1068px] flex flex-col gap-16 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
           >
             {/* Research Approach */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
               <motion.h2 variants={fadeUp} className="text-3xl font-medium">
                 Research Approach
               </motion.h2>
               <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                 To understand where agreement workflows were failing enterprise trading teams, I analyzed document lifecycle complexity, governance structures, and system dependencies across the trading platform.
               </motion.p>
-              <motion.div variants={stagger} className="max-w-[720px] mt-6">
+              <motion.div variants={stagger} className="max-w-[720px]">
                 <motion.h3 variants={fadeUp} className="text-[#9CA3AF] text-sm font-medium mb-3">
                   Methods
                 </motion.h3>
@@ -310,13 +310,14 @@ export default function SignCaseStudy() {
                   ))}
                 </motion.div>
               </motion.div>
-              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 max-w-[780px] mt-16">
-                <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
-                  <Sparkles className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
-                  <span className="text-white text-base">Due to regulatory sensitivity and the product's early stage, direct user access was limited — research relied primarily on workflow analysis, stakeholder collaboration, and system documentation review.</span>
-                </div>
-              </motion.div>
             </div>
+
+            <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent to-accent/20 max-w-[780px]">
+              <div className="rounded-[11px] bg-card px-5 py-4 flex items-center gap-3">
+                <Sparkles className="w-5 h-5 text-accent flex-shrink-0" strokeWidth={1.5} />
+                <span className="text-white text-base">Due to regulatory sensitivity and the product's early stage, direct user access was limited — research relied primarily on workflow analysis, stakeholder collaboration, and system documentation review.</span>
+              </div>
+            </motion.div>
 
             {/* Research Focus */}
             <div>
