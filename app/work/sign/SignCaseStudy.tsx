@@ -340,14 +340,14 @@ export default function SignCaseStudy() {
             </div>
 
             {/* Key Insights */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
               <motion.h2 variants={fadeUp} className="text-3xl font-medium">
                 Key Insights
               </motion.h2>
               <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                 These insights shaped the core design principles and solution direction.
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-col gap-4 max-w-[780px] mt-5">
+              <motion.div variants={fadeUp} className="flex flex-col gap-4 max-w-[780px]">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
                 <div className="flex flex-col gap-4">
                   {insights.map((text, i) => {
