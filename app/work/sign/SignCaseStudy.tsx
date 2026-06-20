@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Search, ScanSearch, Frame, CircleCheck, ArrowRight, Lightbulb, Sparkles } from "lucide-react";
@@ -64,21 +65,34 @@ const insights = [
   "Static formats limited automation, tracking, and execution across systems.",
 ];
 
+const iterationSteps = [
+  { num: "1", title: "Design proposal", text: "Based on research and governance requirements" },
+  { num: "2", title: "Team review", text: "Reviewed with product, compliance, and engineering" },
+  { num: "3", title: "Design revision", text: "Iterated on ownership, signing flows, and field logic" },
+  { num: "4", title: "Engineering handoff", text: "Final designs approved and handed off" },
+];
+
 const beforeAfter = [
   {
+    title: "Template creation",
+    beforeImg: "/sign-template-before.png",
+    afterImg: "/sign-template-after.png",
+    before: "Static template — no conditional clauses, dynamic roles, or automated date logic.",
+    after: "Reusable templates with conditional clauses, dynamic roles, and automated date logic.",
+  },
+  {
     title: "Agreement creation",
-    before: "Free-form text editor with no template system — every agreement started from scratch.",
-    after: "Structured template library with field-level permissions and pre-filled metadata from the ecosystem.",
+    beforeImg: "/sign-agreement-before.png",
+    afterImg: "/sign-agreement-after.png",
+    before: "No ownership indicators or signing order — responsibilities unclear to all parties.",
+    after: "Ownership, roles, and signing order visible — responsibilities clear at every step.",
   },
   {
-    title: "Multi-party review",
-    before: "Email threads with attached PDFs; no clear indication of who had reviewed or approved.",
-    after: "Sequential and parallel review lanes with real-time status indicators and comment threads per clause.",
-  },
-  {
-    title: "Signing & completion",
-    before: "DocuSign integration via redirect — users left the platform and lost context.",
-    after: "Native signing flow with biometric verification integrated via Verifier+ — end-to-end in-platform.",
+    title: "All Documents table",
+    beforeImg: "/sign-documents-before.png",
+    afterImg: "/sign-documents-after.png",
+    before: "Only Template and Agreement tables — no lifecycle states, activity indicators, or ownership tracking.",
+    after: "Full lifecycle states (Draft → In review → Signed) and activity indicators visible.",
   },
 ];
 
@@ -99,6 +113,7 @@ const responsibilities = [
 ];
 
 export default function SignCaseStudy() {
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
   return (
     <div className="bg-bg text-white min-h-screen">
       {/* Back nav */}
@@ -406,7 +421,7 @@ export default function SignCaseStudy() {
       </section>
 
       {/* Validation — Before & After */}
-      <section className="section-padding border-t border-white/[0.06]">
+      <section className="section-padding bg-card border-t border-white/[0.06]">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
           <SectionLabel label="Validation" />
           <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
@@ -415,36 +430,90 @@ export default function SignCaseStudy() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-80px" }}
-              className="flex flex-col gap-8"
+              className="flex flex-col gap-16"
             >
-              <motion.h2 variants={fadeUp} className="text-3xl font-medium">
-                Before &amp; After
-              </motion.h2>
-              {beforeAfter.map((item) => (
-                <motion.div
-                  key={item.title}
-                  variants={fadeUp}
-                  className="rounded-xl border border-white/[0.08] overflow-hidden"
-                >
-                  <div className="px-5 py-4 bg-card border-b border-white/[0.08]">
-                    <h3 className="text-sm font-medium text-white/60">{item.title}</h3>
+              <motion.div variants={fadeUp} className="flex flex-col gap-5">
+                <h2 className="text-3xl font-medium text-white">Validation Approach</h2>
+                <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+                  Design decisions for Sign were validated collaboratively — each solution reviewed with product and engineering before development. Key flows were tested with 5–6 internal users across 2 sessions.
+                </p>
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-[#9CA3AF] text-sm font-medium">Methods</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {["Usability sessions", "Design review", "Engineering collaboration"].map((m) => (
+                      <span key={m} className="px-3 py-1.5 rounded-lg bg-[#1a1f2e] border border-white/[0.08] text-white text-sm">
+                        {m}
+                      </span>
+                    ))}
                   </div>
-                  <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
-                    <div className="p-6">
-                      <p className="text-[#8892a4] text-xs font-medium uppercase tracking-wider mb-3">
-                        Before
-                      </p>
-                      <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-3xl font-medium text-white">Iteration Process</h2>
+                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+                    Each proposal was reviewed, revised, and approved before engineering handoff.
+                  </p>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {iterationSteps.map((step) => (
+                    <div key={step.num} className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4">
+                      <span className="w-11 h-11 rounded-lg bg-accent/10 flex items-center justify-center text-accent font-medium">
+                        {step.num}
+                      </span>
+                      <div>
+                        <h3 className="text-white text-lg font-medium mb-1">{step.title}</h3>
+                        <p className="text-[#D1D5DB] text-sm leading-[1.6]">{step.text}</p>
+                      </div>
                     </div>
-                    <div className="p-6">
-                      <p className="text-accent text-xs font-medium uppercase tracking-wider mb-3">
-                        After
-                      </p>
-                      <p className="text-white text-base leading-[1.6]">{item.after}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-3xl font-medium text-white">Before &amp; After</h2>
+                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+                    Three key changes — agreement structure, template logic, and document lifecycle.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  {beforeAfter.map((item) => (
+                    <motion.div
+                      key={item.title}
+                      variants={fadeUp}
+                      className="rounded-xl border border-white/[0.08] overflow-hidden bg-bg"
+                    >
+                      <div className="px-5 py-4 border-b border-white/[0.08]">
+                        <h3 className="text-base font-medium text-white">{item.title}</h3>
+                      </div>
+                      <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
+                        <div className="p-6 flex flex-col gap-5">
+                          <p className="text-[#8892a4] text-sm font-medium uppercase tracking-wider">Before</p>
+                          <img
+                            src={item.beforeImg}
+                            alt={`${item.title} — before`}
+                            onClick={() => setLightboxImg(item.beforeImg)}
+                            className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-opacity hover:opacity-90"
+                          />
+                          <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
+                        </div>
+                        <div className="p-6 flex flex-col gap-5">
+                          <p className="text-accent text-sm font-medium uppercase tracking-wider">After</p>
+                          <img
+                            src={item.afterImg}
+                            alt={`${item.title} — after`}
+                            onClick={() => setLightboxImg(item.afterImg)}
+                            className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-opacity hover:opacity-90"
+                          />
+                          <p className="text-white text-base leading-[1.6]">{item.after}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -516,6 +585,19 @@ export default function SignCaseStudy() {
           </Link>
         </div>
       </section>
+
+      {lightboxImg && (
+        <div
+          onClick={() => setLightboxImg(null)}
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-6 cursor-zoom-out"
+        >
+          <img
+            src={lightboxImg}
+            alt="Enlarged screenshot"
+            className="max-w-[95vw] max-h-[90vh] w-auto h-auto rounded-lg shadow-2xl"
+          />
+        </div>
+      )}
     </div>
   );
 }
