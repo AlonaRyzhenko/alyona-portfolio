@@ -66,10 +66,10 @@ const insights = [
 ];
 
 const iterationSteps = [
-  { num: "1", title: "Design proposal", text: "Based on research and governance requirements" },
-  { num: "2", title: "Team review", text: "Reviewed with product, compliance, and engineering" },
-  { num: "3", title: "Design revision", text: "Iterated on ownership, signing flows, and field logic" },
-  { num: "4", title: "Engineering handoff", text: "Final designs approved and handed off" },
+  { num: "01", title: "Design proposal", text: "Based on research and governance requirements" },
+  { num: "02", title: "Team review", text: "Reviewed with product, compliance, and engineering" },
+  { num: "03", title: "Design revision", text: "Iterated on ownership, signing flows, and field logic" },
+  { num: "04", title: "Engineering handoff", text: "Final designs approved and handed off" },
 ];
 
 const beforeAfter = [
@@ -94,6 +94,21 @@ const beforeAfter = [
     before: "Only Template and Agreement tables — no lifecycle states, activity indicators, or ownership tracking.",
     after: "Full lifecycle states (Draft → In review → Signed) and activity indicators visible.",
   },
+];
+
+const tasks = [
+  { task: "Create a new agreement", s1: "partial", s2: "passed" },
+  { task: "Create a Digital Title template", s1: "failed", s2: "passed" },
+  { task: "Add fields and adjust view agreement", s1: "partial", s2: "passed" },
+  { task: "Find agreement by status in All Documents", s1: "failed", s2: "passed" },
+  { task: "Sign an agreement", s1: "partial", s2: "passed" },
+];
+
+const keyFindings = [
+  { title: "Ownership and signing order unclear.", text: "Surfaced in the agreement panel during testing." },
+  { title: "Template creation too static.", text: "Rebuilt with conditional, role-aware configuration." },
+  { title: "Document table lacked lifecycle visibility.", text: "States and activity indicators added to All Documents." },
+  { title: "Concurrent signing conflicts.", text: "Fields and parties redesigned as independent records." },
 ];
 
 const impacts = [
@@ -512,6 +527,73 @@ export default function SignCaseStudy() {
                       </div>
                     </motion.div>
                   ))}
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="flex flex-col gap-12">
+                <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-3">
+                    <h2 className="text-3xl font-medium text-white">Tasks &amp; Findings</h2>
+                    <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+                      5 tasks tested across 2 sessions with 5–6 internal users.
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border border-white/[0.08] overflow-hidden">
+                  <table className="w-full text-left">
+                    <thead>
+                      <tr className="border-b border-white/[0.08] bg-bg">
+                        <th className="px-5 py-4 text-[#8892a4] font-medium">Task</th>
+                        <th className="px-5 py-4 text-[#8892a4] font-medium text-center">Session 1</th>
+                        <th className="px-5 py-4 text-[#8892a4] font-medium text-center">Session 2</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tasks.map((row, i) => (
+                        <tr key={row.task} className={`border-b border-white/[0.06] last:border-0 ${i % 2 === 0 ? "" : "bg-bg/40"}`}>
+                          <td className="px-5 py-4 text-[#D1D5DB]">{row.task}</td>
+                          {[row.s1, row.s2].map((status, ci) => (
+                            <td key={ci} className="px-5 py-4 text-center">
+                              <span className={`inline-block px-2.5 py-1 rounded text-xs font-medium uppercase tracking-wider ${
+                                status === "passed"
+                                  ? "bg-accent/15 text-accent"
+                                  : status === "partial"
+                                  ? "bg-yellow-500/15 text-yellow-400"
+                                  : "bg-red-500/15 text-red-400"
+                              }`}>
+                                {status}
+                              </span>
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <h3 className="text-[#9CA3AF] text-sm font-medium">Key Findings &amp; Resolutions</h3>
+                  <div className="flex flex-col gap-3 max-w-[780px]">
+                    {keyFindings.map((f) => (
+                      <div key={f.title} className="p-5 rounded-xl bg-bg border border-white/[0.08] flex items-start gap-4">
+                        <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                        <div>
+                          <p className="text-accent text-sm font-medium mb-1">{f.title}</p>
+                          <p className="text-[#D1D5DB] text-base leading-[1.6]">{f.text}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent/60 to-transparent max-w-[780px]">
+                <div className="rounded-[11px] bg-[#111827]/95 px-6 py-5 flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <span className="text-white text-base leading-[1.6]">
+                    All critical findings were addressed between session 1 and session 2 — ownership visibility, template flexibility, and lifecycle tracking confirmed as resolved. All tested users completed core tasks without guidance in the final iteration.
+                  </span>
                 </div>
               </motion.div>
             </motion.div>
