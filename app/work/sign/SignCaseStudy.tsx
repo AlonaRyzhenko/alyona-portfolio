@@ -284,7 +284,7 @@ export default function SignCaseStudy() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
-            className="max-w-[1068px] flex flex-col gap-16 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
+            className="max-w-[1068px] flex flex-col gap-12 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
           >
             {/* Research Approach */}
             <div className="flex flex-col gap-4">
@@ -294,7 +294,7 @@ export default function SignCaseStudy() {
               <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                 To understand where agreement workflows were failing enterprise trading teams, I analyzed document lifecycle complexity, governance structures, and system dependencies across the trading platform.
               </motion.p>
-              <motion.div variants={stagger} className="max-w-[720px]">
+              <motion.div variants={stagger} className="max-w-[720px] mt-6">
                 <motion.h3 variants={fadeUp} className="text-[#9CA3AF] text-sm font-medium mb-3">
                   Methods
                 </motion.h3>
@@ -320,13 +320,13 @@ export default function SignCaseStudy() {
 
             {/* Research Focus */}
             <div>
-              <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-6">
+              <motion.h2 variants={fadeUp} className="text-3xl font-medium mb-8">
                 Research Focus
               </motion.h2>
               <div className="flex flex-col gap-6 max-w-[780px]">
                 {researchFocus.map((f) => (
                   <motion.div key={f.num} variants={fadeUp} className="flex items-start gap-4">
-                    <span className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium flex-shrink-0">
+                    <span className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-medium flex-shrink-0">
                       {f.num}
                     </span>
                     <div>
@@ -346,7 +346,7 @@ export default function SignCaseStudy() {
               <motion.p variants={fadeUp} className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
                 These insights shaped the core design principles and solution direction.
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-col gap-4 max-w-[780px] mt-8">
+              <motion.div variants={fadeUp} className="flex flex-col gap-4 max-w-[780px] mt-6">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Insights</h3>
                 <div className="flex flex-col gap-4">
                   {insights.map((text, i) => {
@@ -374,7 +374,7 @@ export default function SignCaseStudy() {
       </section>
 
       {/* Information Architecture */}
-      <section className="section-padding bg-bg border-t border-white/[0.06]">
+      <section className="section-padding bg-card border-t border-white/[0.06]">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
           <SectionLabel label="Information Architecture" />
           <div className="max-w-[1068px] ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]">
