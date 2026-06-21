@@ -52,7 +52,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="text-[#d1d5db] text-lg max-w-[880px] mb-16 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
+          className="text-[#d1d5db] text-lg max-w-[780px] mb-16 ml-0 lg:ml-[max(0px,calc((100%-1068px)/2))]"
         >
           Two fintech case studies for enterprise clients — research, system
           design, and end-to-end delivery.
@@ -93,10 +93,10 @@ export default function Projects() {
                         <h3 className="text-2xl font-medium text-white leading-tight">
                           {p.title}
                         </h3>
-                        <p className="text-[#d1d5db] text-base leading-[1.5]">
+                        <p className="text-white text-base leading-[1.5]">
                           {p.tagline}
                         </p>
-                        <p className="text-[#d1d5db] text-base leading-[1.6] opacity-80">
+                        <p className="text-[#d1d5db] text-base leading-[1.6]">
                           {p.description}
                         </p>
                       </div>
@@ -106,7 +106,7 @@ export default function Projects() {
                         {p.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-3 py-1.5 rounded bg-[#1d2432] text-[#d1d5db] text-xs font-normal"
+                            className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-white text-xs"
                           >
                             {tag}
                           </span>
