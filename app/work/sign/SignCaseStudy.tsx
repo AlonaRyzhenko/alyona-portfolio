@@ -32,7 +32,7 @@ const processSteps = [
   },
   {
     icon: Frame,
-    title: "Concept & Interaction Design",
+    title: "Concept & Design",
     desc: "Designed structured agreement flows and role-aware interactions.",
     tags: ["interaction design", "IA refinement", "workflow design"],
   },
