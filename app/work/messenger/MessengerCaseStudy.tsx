@@ -377,7 +377,7 @@ export default function MessengerCaseStudy() {
                 <motion.div variants={fadeUp} className="flex flex-col gap-3">
                   <h3 className="text-[#9CA3AF] text-sm font-medium">Methods</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Compliance review", "Competitor analysis", "Workflow audit"].map((m) => (
+                    {["Compliance Review", "Competitor Analysis", "Workflow Audit"].map((m) => (
                       <span key={m} className="px-3 py-1.5 rounded-lg bg-card border border-white/[0.08] text-white text-sm">
                         {m}
                       </span>
@@ -596,7 +596,7 @@ export default function MessengerCaseStudy() {
                 <div className="flex flex-col gap-3">
                   <h3 className="text-[#9CA3AF] text-sm font-medium">Methods</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Usability sessions", "Iterative testing", "Design review"].map((m) => (
+                    {["Usability Sessions", "Iterative Testing", "Design Review"].map((m) => (
                       <span key={m} className="px-3 py-1.5 rounded-lg bg-[#1a1f2e] border border-white/[0.08] text-white text-sm">
                         {m}
                       </span>
@@ -779,11 +779,12 @@ export default function MessengerCaseStudy() {
                       <Icon className="w-5 h-5 text-accent" strokeWidth={1.5} />
                     </span>
                     <div className="flex flex-col gap-2">
-                      <div className="flex items-center gap-3 flex-wrap">
-                        <h3 className="text-white text-base font-medium">{item.title}</h3>
-                        <span className="px-2 py-0.5 rounded text-xs bg-accent/10 text-accent font-medium">{item.badge}</span>
-                      </div>
+                      <h3 className="text-white text-base font-medium">{item.title}</h3>
                       <p className="text-[#D1D5DB] text-sm leading-[1.6]">{item.text}</p>
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs bg-accent/10 text-accent font-medium w-fit mt-1">
+                        {item.trend === "down" ? <ArrowDown className="w-3 h-3" /> : item.trend === "up" ? <ArrowUp className="w-3 h-3" /> : <Minus className="w-3 h-3" />}
+                        {item.badge}
+                      </span>
                     </div>
                   </motion.div>
                 );
