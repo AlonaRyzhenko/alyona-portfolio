@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Search, ScanSearch, Frame, CircleCheck, ArrowRight, Lightbulb, Sparkles } from "lucide-react";
+import { Search, ScanSearch, Frame, CircleCheck, ArrowRight, Lightbulb, Sparkles, UserCheck, Zap, TrendingUp, ShieldCheck, ArrowDown, ArrowUp } from "lucide-react";
 
 const COVER_IMG = "/sign.png";
 
@@ -111,11 +111,18 @@ const keyFindings = [
   { title: "Concurrent signing conflicts.", text: "Fields and parties redesigned as independent records." },
 ];
 
-const impacts = [
-  { value: "60%", label: "Faster agreement cycle time" },
-  { value: "3×", label: "Increase in completed workflows" },
-  { value: "0", label: "Compliance audit failures post-launch" },
-  { value: "9.1/10", label: "Perceived ease of use (SUS)" },
+const productImpact = [
+  "Enabled lifecycle tracking across agreements",
+  "Standardized document configuration patterns",
+  "Reduced reliance on external coordination tools",
+  "Improved confidence in secure agreement execution",
+];
+
+const outcomes = [
+  { icon: UserCheck, title: "Stronger governance visibility", text: "Multi-party agreements became easier to coordinate as roles and status stayed visible throughout the workflow.", badge: "coordination effort", trend: "down" },
+  { icon: Zap, title: "Faster agreement execution", text: "Setup and approval moved quicker once templates and actions were built into the flow.", badge: "workflow speed", trend: "up" },
+  { icon: TrendingUp, title: "Improved operational oversight", text: "Teams could track active agreements and spot pending actions without manual chasing.", badge: "execution visibility", trend: "up" },
+  { icon: ShieldCheck, title: "Reduced execution risk", text: "Fewer approvals slipped through as responsibility and confirmation became explicit.", badge: "approval failures", trend: "down" },
 ];
 
 const responsibilities = [
@@ -624,22 +631,60 @@ export default function SignCaseStudy() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-80px" }}
-              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="flex flex-col gap-16"
             >
-              {impacts.map((item) => (
-                <motion.div
-                  key={item.label}
-                  variants={fadeUp}
-                  className="p-6 rounded-xl bg-bg border border-white/[0.08] text-center"
-                >
-                  <div className="text-4xl font-bold text-accent mb-2">
-                    {item.value}
-                  </div>
-                  <div className="text-[#8892a4] text-sm leading-[1.4]">
-                    {item.label}
-                  </div>
-                </motion.div>
-              ))}
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-3xl font-medium text-white">Impact</h2>
+                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+                    The redesign addressed core governance and execution gaps identified during research — tested collaboratively with product and engineering throughout delivery.
+                  </p>
+                </div>
+                <h3 className="text-[#9CA3AF] text-sm font-medium">Key Outcomes</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {outcomes.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <motion.div
+                        key={item.title}
+                        variants={fadeUp}
+                        className="p-6 rounded-xl bg-bg border border-white/[0.08] flex flex-col gap-4"
+                      >
+                        <span className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-accent" strokeWidth={1.5} />
+                        </span>
+                        <div className="flex flex-col gap-2">
+                          <h3 className="text-white text-base font-medium">{item.title}</h3>
+                          <p className="text-[#D1D5DB] text-sm leading-[1.6]">{item.text}</p>
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs bg-accent/10 text-accent font-medium w-fit mt-1">
+                            {item.trend === "down" ? <ArrowDown className="w-3 h-3" /> : <ArrowUp className="w-3 h-3" />}
+                            {item.badge}
+                          </span>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <h3 className="text-[#9CA3AF] text-sm font-medium">Product &amp; Design Impact</h3>
+                <div className="flex flex-col gap-3 max-w-[620px]">
+                  {productImpact.map((item) => (
+                    <div key={item} className="p-5 rounded-xl bg-bg border border-white/[0.08] flex items-start gap-4">
+                      <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <p className="text-[#D1D5DB] text-base leading-[1.6]">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <motion.div variants={fadeUp} className="rounded-xl p-[1px] bg-gradient-to-r from-accent/60 to-transparent max-w-[780px]">
+                <div className="rounded-[11px] bg-[#111827]/95 px-6 py-5 flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <span className="text-white text-base leading-[1.6]">This project demonstrated how structured workflows and governance-aware design can transform static document processes into scalable enterprise agreement systems.</span>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
