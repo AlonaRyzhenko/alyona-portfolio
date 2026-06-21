@@ -633,13 +633,14 @@ export default function SignCaseStudy() {
               viewport={{ once: true, margin: "-80px" }}
               className="flex flex-col gap-16"
             >
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-3">
-                  <h2 className="text-3xl font-medium text-white">Impact</h2>
-                  <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
-                    The redesign addressed core governance and execution gaps identified during research — tested collaboratively with product and engineering throughout delivery.
-                  </p>
-                </div>
+              <div className="flex flex-col gap-3">
+                <h2 className="text-3xl font-medium text-white">Impact</h2>
+                <p className="text-[#D1D5DB] text-base leading-[1.7] max-w-[780px]">
+                  The redesign addressed core governance and execution gaps identified during research — tested collaboratively with product and engineering throughout delivery.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-4">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Key Outcomes</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {outcomes.map((item) => {
@@ -669,7 +670,7 @@ export default function SignCaseStudy() {
 
               <div className="flex flex-col gap-4">
                 <h3 className="text-[#9CA3AF] text-sm font-medium">Product &amp; Design Impact</h3>
-                <div className="flex flex-col gap-3 max-w-[620px]">
+                <div className="flex flex-col gap-3 max-w-[526px]">
                   {productImpact.map((item) => (
                     <div key={item} className="p-5 rounded-xl bg-bg border border-white/[0.08] flex items-start gap-4">
                       <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
