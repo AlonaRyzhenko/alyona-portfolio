@@ -574,7 +574,7 @@ export default function SignCaseStudy() {
 
                 <div className="flex flex-col gap-4">
                   <h3 className="text-[#9CA3AF] text-sm font-medium">Key Findings &amp; Resolutions</h3>
-                  <div className="flex flex-col gap-3 max-w-[620px]">
+                  <div className="flex flex-col gap-3 max-w-[520px]">
                     {keyFindings.map((f) => (
                       <div key={f.title} className="p-5 rounded-xl bg-card border border-white/[0.08] flex items-start gap-4">
                         <ArrowRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
@@ -599,6 +599,19 @@ export default function SignCaseStudy() {
             </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* Showcase */}
+      <section className="border-t border-white/[0.06]">
+        <motion.img
+          src="/sign-showcase.png"
+          alt="Sign product showcase"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8 }}
+          className="w-full h-auto block"
+        />
       </section>
 
       {/* Impact */}
