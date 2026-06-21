@@ -462,7 +462,7 @@ export default function SignCaseStudy() {
                 <div className="flex flex-col gap-3">
                   <h3 className="text-[#9CA3AF] text-sm font-medium">Methods</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Usability sessions", "Design review", "Engineering collaboration"].map((m) => (
+                    {["Usability Sessions", "Design Review", "Engineering Collaboration"].map((m) => (
                       <span key={m} className="px-3 py-1.5 rounded-lg bg-[#1a1f2e] border border-white/[0.08] text-white text-sm">
                         {m}
                       </span>
