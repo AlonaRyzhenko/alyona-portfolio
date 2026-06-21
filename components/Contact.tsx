@@ -63,7 +63,7 @@ export default function Contact() {
 
         {/* Divider + Footer */}
         <div className="mt-20 pt-6 border-t border-white/[0.06] flex justify-end">
-          <p className="text-[#6b7280] text-sm">
+          <p className="text-[#9CA3AF] text-sm">
             © 2026 Alyona Ryzhenko — Portfolio
           </p>
         </div>
