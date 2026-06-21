@@ -46,7 +46,7 @@ export default function About() {
           className="flex flex-col gap-16 max-w-[1068px] ml-auto mr-0 lg:ml-[calc((100%-1068px)/2)]"
         >
           {/* Intro */}
-          <motion.div variants={stagger} className="flex flex-col gap-4 max-w-[880px]">
+          <motion.div variants={stagger} className="flex flex-col gap-4 max-w-[780px]">
             <motion.p variants={fadeUp} className="text-[#D1D5DB] text-lg leading-[1.8]">
               I design complex B2B workflows and permission-heavy interfaces — and I own the design systems behind them.
             </motion.p>
@@ -76,7 +76,7 @@ export default function About() {
               <motion.p variants={fadeUp} className="text-[#8892a4] text-sm font-medium">
                 My work focus on
               </motion.p>
-              <motion.div variants={stagger} className="flex flex-wrap gap-3">
+              <motion.div variants={stagger} className="flex flex-wrap gap-3 max-w-[780px]">
                 {focusPills.map((pill) => (
                   <motion.span
                     key={pill}
@@ -96,13 +96,13 @@ export default function About() {
               <motion.h2 variants={fadeUp} className="text-4xl font-medium text-white">
                 Experience
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-lg leading-[1.7]">
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-lg leading-[1.7] max-w-[780px]">
                 6+ years designing enterprise and SaaS products — fintech, CRM
                 systems, and internal platforms.
               </motion.p>
             </motion.div>
 
-            <motion.ul variants={stagger} className="flex flex-col gap-3">
+            <motion.ul variants={stagger} className="flex flex-col gap-3 max-w-[780px]">
               {experience.map((item) => (
                 <motion.li
                   key={item}
