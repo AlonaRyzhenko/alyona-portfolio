@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const focusPills = ["Ownership Visibility", "Workflow Clarity", "Design Systems"];
+const focusPills = ["Ownership Visibility", "Workflow Clarity", "Design Systems", "AI-Assisted Workflow"];
 
 const experience = [
   "7-product fintech ecosystem — Exchange, Sign, Messenger, Vault, Drive, Verifier+, Issuer",
@@ -55,6 +55,9 @@ export default function About() {
               solutions that bring clarity to processes where usability,
               governance, and business logic intersect.
             </motion.p>
+            <motion.p variants={fadeUp} className="text-[#D1D5DB] text-lg leading-[1.8]">
+              I bring AI into my design workflow — from exploration and prototyping to shipping production front-end.
+            </motion.p>
           </motion.div>
 
           {/* Approach */}
@@ -78,7 +81,7 @@ export default function About() {
                   <motion.span
                     key={pill}
                     variants={fadeUp}
-                    className="px-4 py-2.5 rounded-lg bg-[#1D2432] border border-white/[0.15] text-white text-sm font-normal"
+                    className="px-3 py-1.5 rounded-lg bg-[#1a1f2e] border border-white/[0.08] text-white text-sm"
                   >
                     {pill}
                   </motion.span>
@@ -93,7 +96,7 @@ export default function About() {
               <motion.h2 variants={fadeUp} className="text-4xl font-medium text-white">
                 Experience
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-[#8892a4] text-lg leading-[1.7]">
+              <motion.p variants={fadeUp} className="text-[#D1D5DB] text-lg leading-[1.7]">
                 6+ years designing enterprise and SaaS products — fintech, CRM
                 systems, and internal platforms.
               </motion.p>
@@ -104,7 +107,7 @@ export default function About() {
                 <motion.li
                   key={item}
                   variants={fadeUp}
-                  className="flex items-start gap-4 text-[#D1D5DB] text-base leading-[1.6]"
+                  className="flex items-start gap-4 text-white text-base leading-[1.6]"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 mt-2" />
                   <span>{item}</span>
