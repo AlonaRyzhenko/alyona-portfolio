@@ -70,7 +70,27 @@ export default function Projects() {
               transition={{ delay: i * 0.12 }}
             >
               <Link href={p.href} className="group block">
-                <div className="relative rounded-2xl bg-[#111827] border border-[#1d2432] overflow-hidden h-[476px] transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40">
+                <div className="md:hidden rounded-2xl bg-[#111827] border border-[#1d2432] p-8 flex flex-col gap-5 transition-all duration-300 hover:border-accent/30">
+                  <div className="flex items-center gap-2">
+                    {p.category.map((cat, ci) => (
+                      <span key={cat} className="flex items-center gap-2">
+                        {ci > 0 && <span className="w-1 h-1 rounded-full bg-accent" />}
+                        <span className="text-accent text-sm font-medium">{cat}</span>
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <h3 className="text-2xl font-medium text-white leading-tight">{p.title}</h3>
+                    <p className="text-white text-base leading-[1.5]">{p.tagline}</p>
+                    <p className="text-[#d1d5db] text-base leading-[1.6]">{p.description}</p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {p.tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-white text-xs">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative rounded-2xl bg-[#111827] border border-[#1d2432] overflow-hidden h-[476px] hidden md:block transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40">
                   {/* Text content */}
                   <div className="absolute left-0 top-0 bottom-0 w-[44%] flex flex-col justify-between p-10">
                     <div className="flex flex-col gap-6">
