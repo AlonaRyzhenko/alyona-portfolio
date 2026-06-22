@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -14,7 +14,7 @@ const links = [
 
 export default function Nav() {
   const [activeSection, setActiveSection] = useState("home");
-  const [menuOpen, setMenuOpen] = useState(false);
+
   const pathname = usePathname();
 
   // Scroll-spy: find which section's top is at or above the viewport midpoint
@@ -50,7 +50,14 @@ export default function Nav() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50 pointer-events-none"
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex justify-end items-center py-5">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex justify-between items-center py-5">
+        <Link href="/" className="pointer-events-auto md:hidden text-white text-base font-medium">
+          Portfolio
+        </Link>
+        <span className="hidden md:block text-white text-base font-medium">
+          Portfolio
+        </span>
+
         {/* Desktop nav pill — always glass */}
         <nav className="pointer-events-auto hidden md:flex items-center gap-1 rounded-full px-3 py-2 bg-bg/30 backdrop-blur-[20px] border border-white/10">
           {links.map((link) => (
@@ -68,52 +75,23 @@ export default function Nav() {
           ))}
         </nav>
 
-        {/* Mobile hamburger */}
-        <button
-          className="pointer-events-auto md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <motion.span
-            animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-px bg-white origin-center"
-          />
-          <motion.span
-            animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="block w-5 h-px bg-white"
-          />
-          <motion.span
-            animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-px bg-white origin-center"
-          />
-        </button>
+        {/* Mobile nav */}
+        <nav className="pointer-events-auto md:hidden flex items-center gap-4">
+          {links.filter((link) => link.section !== "home").map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className={`text-sm font-medium transition-colors ${
+                isActive(link.section) ? "text-white" : "text-[#E5E7EB] hover:text-white"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
       </div>
 
       {/* Mobile menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="pointer-events-auto md:hidden overflow-hidden bg-[#0d0f1a]/95 backdrop-blur-md border-b border-white/[0.06]"
-          >
-            <div className="px-6 py-4 flex flex-col gap-1">
-              {links.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-white/70 text-base font-medium hover:text-white transition-colors py-2.5 border-b border-white/[0.05] last:border-0"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.header>
   );
 }
