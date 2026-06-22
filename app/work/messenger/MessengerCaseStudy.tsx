@@ -796,7 +796,7 @@ export default function MessengerCaseStudy() {
 
       {/* Footer nav */}
       <section className="py-16 border-t border-white/[0.06]">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex flex-row items-center justify-between gap-4">
           <Link
             href="/"
             className="flex items-center gap-2 text-[#8892a4] text-sm hover:text-white transition-colors"
