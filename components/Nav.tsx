@@ -50,13 +50,8 @@ export default function Nav() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50 pointer-events-none"
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex justify-between items-center py-5">
-        <Link href="/" className="pointer-events-auto md:hidden text-white text-base font-medium">
-          Portfolio
-        </Link>
-        <span className="hidden md:block text-white text-base font-medium">
-          Portfolio
-        </span>
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex justify-between md:justify-end items-center py-5">
+        <span className="md:hidden text-white text-base font-medium">Portfolio</span>
 
         {/* Desktop nav pill — always glass */}
         <nav className="pointer-events-auto hidden md:flex items-center gap-1 rounded-full px-3 py-2 bg-bg/30 backdrop-blur-[20px] border border-white/10">
@@ -76,12 +71,12 @@ export default function Nav() {
         </nav>
 
         {/* Mobile nav */}
-        <nav className="pointer-events-auto md:hidden flex items-center gap-4">
-          {links.filter((link) => link.section !== "home").map((link) => (
+        <nav className="pointer-events-auto md:hidden flex items-center gap-5">
+          {links.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-base font-medium transition-colors ${
                 isActive(link.section) ? "text-white" : "text-[#E5E7EB] hover:text-white"
               }`}
             >
