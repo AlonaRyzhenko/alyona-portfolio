@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Search, BarChart3, Network, CircleCheck, Lightbulb, Sparkles, ArrowRight, Zap, TrendingUp, ArrowDown, ArrowUp, Minus } from "lucide-react";
 
@@ -651,7 +651,7 @@ export default function MessengerCaseStudy() {
                         src={item.beforeImg}
                         alt={`${item.title} — before`}
                         onClick={() => setLightboxImg(item.beforeImg)}
-                        className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-opacity hover:opacity-90"
+                        className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-all duration-300 hover:opacity-90 hover:scale-[1.01]"
                       />
                       <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
                     </div>
@@ -661,7 +661,7 @@ export default function MessengerCaseStudy() {
                         src={item.afterImg}
                         alt={`${item.title} — after`}
                         onClick={() => setLightboxImg(item.afterImg)}
-                        className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-opacity hover:opacity-90"
+                        className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-all duration-300 hover:opacity-90 hover:scale-[1.01]"
                       />
                       <p className="text-white text-base leading-[1.6]">{item.after}</p>
                     </div>
@@ -830,18 +830,28 @@ export default function MessengerCaseStudy() {
         </div>
       </section>
 
-      {lightboxImg && (
-        <div
-          onClick={() => setLightboxImg(null)}
-          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-6 cursor-zoom-out"
-        >
-          <img
-            src={lightboxImg}
-            alt="Enlarged screenshot"
-            className="max-w-[95vw] max-h-[90vh] w-auto h-auto rounded-lg shadow-2xl"
-          />
-        </div>
-      )}
+      <AnimatePresence>
+        {lightboxImg && (
+          <motion.div
+            onClick={() => setLightboxImg(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-6 cursor-zoom-out"
+          >
+            <motion.img
+              src={lightboxImg}
+              alt="Enlarged screenshot"
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              className="max-w-[95vw] max-h-[90vh] w-auto h-auto rounded-lg shadow-2xl"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
