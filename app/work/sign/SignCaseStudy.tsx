@@ -694,34 +694,16 @@ export default function SignCaseStudy() {
       {/* Footer nav */}
       <section className="py-16 border-t border-white/[0.06]">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex flex-row items-center justify-between gap-4">
-          <Link
-            href="/work/messenger"
-            className="flex items-center gap-2 text-[#8892a4] text-sm hover:text-white transition-colors"
-          >
+          <Link href="/" className="flex items-center gap-2 text-[#8892a4] text-sm hover:text-white transition-colors">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M13 8H3M7 4l-4 4 4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            Previous: Messenger
-          </Link>
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-[#8892a4] text-sm hover:text-white transition-colors"
-          >
             Back to Portfolio
+          </Link>
+          <Link href="/work/messenger" className="flex items-center gap-2 text-[#8892a4] text-sm hover:text-white transition-colors">
+            Next: Messenger
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
         </div>
