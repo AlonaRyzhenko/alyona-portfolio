@@ -8,17 +8,6 @@ const SIGN_IMG = "/sign.png";
 
 const projects = [
   {
-    id: "messenger",
-    category: ["Fintech", "Enterprise"],
-    title: "Messenger",
-    tagline: "Secure communication platform for regulated trading.",
-    description:
-      "Integrated messaging, document workflows, and verification into a secure, action-driven communication platform.",
-    tags: ["secure messaging", "workflow integration", "compliance UX", "design system", "enterprise platform"],
-    href: "/work/messenger",
-    img: MESSENGER_IMG,
-  },
-  {
     id: "sign",
     category: ["Fintech", "Enterprise"],
     title: "Sign",
@@ -28,6 +17,17 @@ const projects = [
     tags: ["agreement workflows", "governance & permissions", "document systems", "design system", "enterprise UX"],
     href: "/work/sign",
     img: SIGN_IMG,
+  },
+  {
+    id: "messenger",
+    category: ["Fintech", "Enterprise"],
+    title: "Messenger",
+    tagline: "Secure communication platform for regulated trading.",
+    description:
+      "Integrated messaging, document workflows, and verification into a secure, action-driven communication platform.",
+    tags: ["secure messaging", "workflow integration", "compliance UX", "design system", "enterprise platform"],
+    href: "/work/messenger",
+    img: MESSENGER_IMG,
   },
 ];
 
