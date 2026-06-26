@@ -517,7 +517,7 @@ export default function SignCaseStudy() {
                             src={item.beforeImg}
                             alt={`${item.title} — before`}
                             onClick={() => setLightboxImg(item.beforeImg)}
-                            className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-all duration-300 hover:opacity-90 hover:scale-[1.01]"
+                            className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-all duration-300 hover:opacity-90 hover:scale-[1.01] hover:border-accent/60"
                           />
                           <p className="text-white/70 text-base leading-[1.6]">{item.before}</p>
                         </div>
@@ -527,7 +527,7 @@ export default function SignCaseStudy() {
                             src={item.afterImg}
                             alt={`${item.title} — after`}
                             onClick={() => setLightboxImg(item.afterImg)}
-                            className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-all duration-300 hover:opacity-90 hover:scale-[1.01]"
+                            className="w-full h-auto rounded-lg border border-white/[0.06] block cursor-zoom-in transition-all duration-300 hover:opacity-90 hover:scale-[1.01] hover:border-accent/60"
                           />
                           <p className="text-white text-base leading-[1.6]">{item.after}</p>
                         </div>
